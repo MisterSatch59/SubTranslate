@@ -64,10 +64,10 @@ public class SRTFile extends File {
 			String line;
 			while ((line = br.readLine()) != null) {
 				SubtitleLine subLine = new SubtitleLine();
-				subLine.setId(Integer.valueOf(line));
+				subLine.setId(Integer.valueOf(line.trim()));
 				line = br.readLine();
 				subLine.settStart((String) line.subSequence(0, 12));
-				subLine.settStart((String) line.subSequence(17, 29));
+				subLine.settEnd((String) line.subSequence(17, 29));
 				line = br.readLine();
 				subLine.setLine1(line);
 

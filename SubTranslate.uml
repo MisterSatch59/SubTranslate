@@ -82,10 +82,10 @@
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_NvAjkBuTEeiM_Z9_g55MXg" type="_zX8vUBrZEeivNpsMtsMdlg" direction="return"/>
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_NvIfYBuTEeiM_Z9_g55MXg" name="getDaoSubtitles" visibility="public" isStatic="true" method="_NvQbMBuTEeiM_Z9_g55MXg">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_NvPNEBuTEeiM_Z9_g55MXg" direction="return"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_NvPNEBuTEeiM_Z9_g55MXg" type="_oexKwBuTEeiM_Z9_g55MXg" direction="return"/>
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_NvRpUBuTEeiM_Z9_g55MXg" name="getDaoLanguage" visibility="public" isStatic="true" method="_NvY-EBuTEeiM_Z9_g55MXg">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_NvXv8BuTEeiM_Z9_g55MXg" direction="return"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_NvXv8BuTEeiM_Z9_g55MXg" type="_nyabEBuTEeiM_Z9_g55MXg" direction="return"/>
         </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_d8OZEBuTEeiM_Z9_g55MXg" name="Dao&lt;T>" visibility="public" isAbstract="true">
@@ -166,7 +166,7 @@
 </body>
         </ownedBehavior>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_nyjlARuTEeiM_Z9_g55MXg" name="add" visibility="public" method="_nykzIBuTEeiM_Z9_g55MXg" raisedException="_d8Q1UBuTEeiM_Z9_g55MXg">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_nykMEBuTEeiM_Z9_g55MXg" name="beans" type="_nyghshuTEeiM_Z9_g55MXg"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_nykMEBuTEeiM_Z9_g55MXg" name="beans"/>
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_nylaMBuTEeiM_Z9_g55MXg" name="delete" visibility="public" method="_nymBQRuTEeiM_Z9_g55MXg" raisedException="_d8Q1UBuTEeiM_Z9_g55MXg">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_nymBQBuTEeiM_Z9_g55MXg" name="id">
@@ -174,13 +174,13 @@
           </ownedParameter>
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_nymoUBuTEeiM_Z9_g55MXg" name="list" visibility="public" method="_nypEkBuTEeiM_Z9_g55MXg" raisedException="_d8Q1UBuTEeiM_Z9_g55MXg">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_nymoURuTEeiM_Z9_g55MXg" type="_nyghshuTEeiM_Z9_g55MXg" direction="return">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_nymoURuTEeiM_Z9_g55MXg" direction="return">
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nynPYBuTEeiM_Z9_g55MXg"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nyn2cBuTEeiM_Z9_g55MXg" value="*"/>
           </ownedParameter>
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_nyproBuTEeiM_Z9_g55MXg" name="update" visibility="public" method="_nyqSsBuTEeiM_Z9_g55MXg" raisedException="_d8Q1UBuTEeiM_Z9_g55MXg">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_nyproRuTEeiM_Z9_g55MXg" name="bean" type="_nyghshuTEeiM_Z9_g55MXg"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_nyproRuTEeiM_Z9_g55MXg" name="bean"/>
         </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_oexKwBuTEeiM_Z9_g55MXg" name="DaoSubtitles" visibility="public">
@@ -350,7 +350,7 @@
 </body>
         </ownedBehavior>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_oe4fgBuTEeiM_Z9_g55MXg" name="add" visibility="public" method="_oe7i0BuTEeiM_Z9_g55MXg" raisedException="_d8Q1UBuTEeiM_Z9_g55MXg">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_oe5toBuTEeiM_Z9_g55MXg" name="subtitles" type="_oeznABuTEeiM_Z9_g55MXg"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_oe5toBuTEeiM_Z9_g55MXg" name="subtitles"/>
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_oe8w8BuTEeiM_Z9_g55MXg" name="delete" visibility="public" method="_oe_NMBuTEeiM_Z9_g55MXg" raisedException="_d8Q1UBuTEeiM_Z9_g55MXg">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_oe9YABuTEeiM_Z9_g55MXg" name="id">
@@ -358,13 +358,13 @@
           </ownedParameter>
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_ofBpcBuTEeiM_Z9_g55MXg" name="list" visibility="public" method="_ofF64BuTEeiM_Z9_g55MXg" raisedException="_d8Q1UBuTEeiM_Z9_g55MXg">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_ofDeoBuTEeiM_Z9_g55MXg" type="_oeznABuTEeiM_Z9_g55MXg" direction="return">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_ofDeoBuTEeiM_Z9_g55MXg" direction="return">
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ofEFsBuTEeiM_Z9_g55MXg"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ofEswBuTEeiM_Z9_g55MXg" value="*"/>
           </ownedParameter>
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_ofHwEBuTEeiM_Z9_g55MXg" name="update" visibility="public" method="_ofJlQBuTEeiM_Z9_g55MXg" raisedException="_d8Q1UBuTEeiM_Z9_g55MXg">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_ofIXIBuTEeiM_Z9_g55MXg" name="subtitles" type="_oeznABuTEeiM_Z9_g55MXg"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_ofIXIBuTEeiM_Z9_g55MXg" name="subtitles"/>
         </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Dependency" xmi:id="_sHdIsBuTEeiM_Z9_g55MXg" name="create" client="_NpgYgBuTEeiM_Z9_g55MXg" supplier="_d8OZEBuTEeiM_Z9_g55MXg"/>
@@ -433,7 +433,270 @@
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_LcYqoBhnEeiAzanQIzaG2w" name="model">
-      <packagedElement xmi:type="uml:Class" xmi:id="_B97MIBhnEeiAzanQIzaG2w" name="Model"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_0ypNwBxwEeizssZwUsNBbA" name="Model" visibility="public">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_0ytfMBxwEeizssZwUsNBbA" name="errorMessage" visibility="private" type="_eTc3QBhnEeiAzanQIzaG2w" isUnique="false">
+          <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_0y0M4BxwEeizssZwUsNBbA" name="defaultValue">
+            <language>JAVA</language>
+            <body>&quot;&quot;</body>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_0y-k8BxwEeizssZwUsNBbA" name="subtitlesOriginal" visibility="private" type="_ymjQYBfgEeixr9hZDQbSEg" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_0zDdcBxwEeizssZwUsNBbA" name="subtitlesDestination" visibility="private" type="_ymjQYBfgEeixr9hZDQbSEg" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_0zIV8BxwEeizssZwUsNBbA" name="instance" visibility="private" isStatic="true" type="_0ypNwBxwEeizssZwUsNBbA" isUnique="false">
+          <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_0zOckBxwEeizssZwUsNBbA" name="defaultValue">
+            <language>JAVA</language>
+            <body>new Model()</body>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_0z3VwBxwEeizssZwUsNBbA" name="Model" specification="_0zQRwBxwEeizssZwUsNBbA">
+          <language>JAVA</language>
+          <body>&#xD;
+</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_0z-DcBxwEeizssZwUsNBbA" name="getInstance" specification="_0z5yABxwEeizssZwUsNBbA">
+          <language>JAVA</language>
+          <body>&#xD;
+    if (instance == null)&#xD;
+        instance = new Model();&#xD;
+    return instance;&#xD;
+</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_00UBsBxwEeizssZwUsNBbA" name="getLanguagesNames" specification="_00EKEBxwEeizssZwUsNBbA">
+          <language>JAVA</language>
+          <body>&#xD;
+    List&lt;Language> list = null;&#xD;
+    try {&#xD;
+        list = DaoFactory.getDaoLanguage().list();&#xD;
+    } catch (DaoException e) {&#xD;
+        setError(e.getMessage());&#xD;
+        e.printStackTrace();&#xD;
+    }&#xD;
+    String[] result = new String[list.size()];&#xD;
+    int i = 0;&#xD;
+    for (Language language : list) {&#xD;
+        result[i] = language.getName();&#xD;
+        i++;&#xD;
+    }&#xD;
+    return result;&#xD;
+</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_00lugBxwEeizssZwUsNBbA" name="getLanguages" specification="_00b9gBxwEeizssZwUsNBbA">
+          <language>JAVA</language>
+          <body>&#xD;
+    List&lt;Language> list = null;&#xD;
+    try {&#xD;
+        list = DaoFactory.getDaoLanguage().list();&#xD;
+    } catch (DaoException e) {&#xD;
+        setError(e.getMessage());&#xD;
+        e.printStackTrace();&#xD;
+    }&#xD;
+    Language result = null;&#xD;
+    for (Language language : list) {&#xD;
+        if (language.getName().equalsIgnoreCase(languagesNames)) {&#xD;
+            result = language;&#xD;
+        }&#xD;
+    }&#xD;
+    return result;&#xD;
+</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_00yi0BxwEeizssZwUsNBbA" name="getSubtitlesNames" specification="_00scMBxwEeizssZwUsNBbA">
+          <language>JAVA</language>
+          <body>&#xD;
+    List&lt;Subtitles> list = null;&#xD;
+    try {&#xD;
+        list = DaoFactory.getDaoSubtitles().list();&#xD;
+    } catch (DaoException e) {&#xD;
+        setError(e.getMessage());&#xD;
+        e.printStackTrace();&#xD;
+    }&#xD;
+    String[] result = new String[list.size()];&#xD;
+    int i = 0;&#xD;
+    for (Subtitles subtitles : list) {&#xD;
+        result[i] = subtitles.getTitle() + &quot;.&quot; + subtitles.getLanguage().getAbreviation();&#xD;
+        i++;&#xD;
+    }&#xD;
+    return result;&#xD;
+</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_005QgBxwEeizssZwUsNBbA" name="getSubtitlesOriginalsNames" specification="_001mIBxwEeizssZwUsNBbA">
+          <language>JAVA</language>
+          <body>&#xD;
+    List&lt;Subtitles> list = null;&#xD;
+    try {&#xD;
+        list = DaoFactory.getDaoSubtitles().list();&#xD;
+    } catch (DaoException e) {&#xD;
+        setError(e.getMessage());&#xD;
+        e.printStackTrace();&#xD;
+    }&#xD;
+    List&lt;Subtitles> subtitlesOriginals = new ArrayList&lt;Subtitles>();&#xD;
+    for (Subtitles subtitles : list) {&#xD;
+        if (subtitles.getIdOriginal() == 0) {&#xD;
+            subtitlesOriginals.add(subtitles);&#xD;
+        }&#xD;
+    }&#xD;
+    String[] result = new String[subtitlesOriginals.size()];&#xD;
+    int i = 0;&#xD;
+    for (Subtitles subtitles : subtitlesOriginals) {&#xD;
+        result[i] = subtitles.getTitle() + &quot;.&quot; + subtitles.getLanguage().getAbreviation();&#xD;
+        i++;&#xD;
+    }&#xD;
+    return result;&#xD;
+</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_01BMURxwEeizssZwUsNBbA" name="getSubtitles" specification="_006eoBxwEeizssZwUsNBbA">
+          <language>JAVA</language>
+          <body>&#xD;
+    List&lt;Subtitles> list = null;&#xD;
+    try {&#xD;
+        list = DaoFactory.getDaoSubtitles().list();&#xD;
+    } catch (DaoException e) {&#xD;
+        setError(e.getMessage());&#xD;
+        e.printStackTrace();&#xD;
+    }&#xD;
+    Subtitles result = null;&#xD;
+    for (Subtitles subtitles : list) {&#xD;
+        if (subtitles.getTitle().equalsIgnoreCase(title) &amp;&amp; subtitles.getLanguage().getAbreviation().equalsIgnoreCase(language)) {&#xD;
+            result = subtitles;&#xD;
+        }&#xD;
+    }&#xD;
+    return result;&#xD;
+</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_01EPoBxwEeizssZwUsNBbA" name="setSubtitlesOriginal" specification="_01CacBxwEeizssZwUsNBbA">
+          <language>JAVA</language>
+          <body>&#xD;
+    Subtitles sub = this.getSubtitles(title, language);&#xD;
+    if (sub != null)&#xD;
+        this.subtitlesOriginal = this.getSubtitles(title, language);&#xD;
+    else&#xD;
+        this.setError(&quot;Erreur lors du chargement des sous titres&quot;);&#xD;
+</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_01Gr4BxwEeizssZwUsNBbA" name="setSubtitlesDestination" specification="_01E2sBxwEeizssZwUsNBbA">
+          <language>JAVA</language>
+          <body>&#xD;
+    Subtitles subtitles = this.getSubtitles(title, this.getLanguages(language).getAbreviation());&#xD;
+    if (subtitles == null) {&#xD;
+        this.subtitlesDestination = new Subtitles();&#xD;
+        this.subtitlesDestination.setLanguage(this.getLanguages(language));&#xD;
+        this.subtitlesDestination.setIdOriginal(this.subtitlesOriginal.getId());&#xD;
+        this.subtitlesDestination.setTitle(title);&#xD;
+        List&lt;SubtitleLine> subtitleLinesDestination = new ArrayList&lt;SubtitleLine>();&#xD;
+        List&lt;SubtitleLine> subtitleLinesOriginal = this.subtitlesOriginal.getsubTitleLines();&#xD;
+        for (SubtitleLine subtitleLineOriginal : subtitleLinesOriginal) {&#xD;
+            SubtitleLine subLine = new SubtitleLine();&#xD;
+            subLine.setId(subtitleLineOriginal.getId());&#xD;
+            subLine.settStart(subtitleLineOriginal.gettStart());&#xD;
+            subLine.settEnd(subtitleLineOriginal.gettEnd());&#xD;
+            subLine.setLine1(&quot;&quot;);&#xD;
+            subLine.setLine2(&quot;&quot;);&#xD;
+            subtitleLinesDestination.add(subLine);&#xD;
+        }&#xD;
+        this.subtitlesDestination.setsubTitleLines(subtitleLinesDestination);&#xD;
+        try {&#xD;
+            DaoFactory.getDaoSubtitles().add(subtitlesDestination);&#xD;
+        } catch (DaoException e) {&#xD;
+            setError(e.getMessage());&#xD;
+            e.printStackTrace();&#xD;
+        }&#xD;
+        this.subtitlesDestination = this.getSubtitles(title, this.getLanguages(language).getAbreviation());&#xD;
+    } else {&#xD;
+        this.subtitlesDestination = subtitles;&#xD;
+    }&#xD;
+</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_01JvMBxwEeizssZwUsNBbA" name="getSubtitlesOriginal" specification="_01IhEBxwEeizssZwUsNBbA">
+          <language>JAVA</language>
+          <body>&#xD;
+    return subtitlesOriginal;&#xD;
+</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_01LkYRxwEeizssZwUsNBbA" name="getsubtitlesDestination" specification="_01KWQBxwEeizssZwUsNBbA">
+          <language>JAVA</language>
+          <body>&#xD;
+    return subtitlesDestination;&#xD;
+</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_01OAoBxwEeizssZwUsNBbA" name="setError" specification="_01MygBxwEeizssZwUsNBbA">
+          <language>JAVA</language>
+          <body>&#xD;
+    System.out.println(message);&#xD;
+    this.errorMessage = message;&#xD;
+</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_01Qc4BxwEeizssZwUsNBbA" name="getError" specification="_01OnsBxwEeizssZwUsNBbA">
+          <language>JAVA</language>
+          <body>&#xD;
+    return this.errorMessage;&#xD;
+</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_01VVYBxwEeizssZwUsNBbA" name="setSubtitlesDestination" specification="_01UHQBxwEeizssZwUsNBbA">
+          <language>JAVA</language>
+          <body>&#xD;
+    this.subtitlesDestination = subtitlesDest;&#xD;
+    try {&#xD;
+        DaoFactory.getDaoSubtitles().update(this.subtitlesDestination);&#xD;
+    } catch (DaoException e) {&#xD;
+        this.setError(&quot;Erreur lors de l'enregistrement des modifications dans la base de données&quot;);&#xD;
+        e.printStackTrace();&#xD;
+    }&#xD;
+</body>
+        </ownedBehavior>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_0zQRwBxwEeizssZwUsNBbA" name="Model" visibility="private" method="_0z3VwBxwEeizssZwUsNBbA"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_0z5yABxwEeizssZwUsNBbA" name="getInstance" visibility="public" isStatic="true" method="_0z-DcBxwEeizssZwUsNBbA">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_0z8OQBxwEeizssZwUsNBbA" type="_0ypNwBxwEeizssZwUsNBbA" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_00EKEBxwEeizssZwUsNBbA" name="getLanguagesNames" visibility="public" method="_00UBsBxwEeizssZwUsNBbA">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_00H0cBxwEeizssZwUsNBbA" type="_eTc3QBhnEeiAzanQIzaG2w" direction="return">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_00PJMBxwEeizssZwUsNBbA"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_00RlcBxwEeizssZwUsNBbA" value="*"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_00b9gBxwEeizssZwUsNBbA" name="getLanguages" visibility="public" method="_00lugBxwEeizssZwUsNBbA">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_00fn4BxwEeizssZwUsNBbA" type="_-gOewBh9Eeiw1LOe9PSYiA" direction="return"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_00irMBxwEeizssZwUsNBbA" name="languagesNames" type="_eTc3QBhnEeiAzanQIzaG2w"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_00scMBxwEeizssZwUsNBbA" name="getSubtitlesNames" visibility="public" method="_00yi0BxwEeizssZwUsNBbA">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_00uRYBxwEeizssZwUsNBbA" type="_eTc3QBhnEeiAzanQIzaG2w" direction="return">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_00vfgBxwEeizssZwUsNBbA"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_00wtoBxwEeizssZwUsNBbA" value="*"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_001mIBxwEeizssZwUsNBbA" name="getSubtitlesOriginalsNames" visibility="public" method="_005QgBxwEeizssZwUsNBbA">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_0020QBxwEeizssZwUsNBbA" type="_eTc3QBhnEeiAzanQIzaG2w" direction="return">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_003bUBxwEeizssZwUsNBbA"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_004CYBxwEeizssZwUsNBbA" value="*"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_006eoBxwEeizssZwUsNBbA" name="getSubtitles" visibility="private" method="_01BMURxwEeizssZwUsNBbA">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_007FsBxwEeizssZwUsNBbA" type="_ymjQYBfgEeixr9hZDQbSEg" direction="return"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_00864BxwEeizssZwUsNBbA" name="title" type="_eTc3QBhnEeiAzanQIzaG2w"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_01BMUBxwEeizssZwUsNBbA" name="language" type="_eTc3QBhnEeiAzanQIzaG2w"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_01CacBxwEeizssZwUsNBbA" name="setSubtitlesOriginal" visibility="public" method="_01EPoBxwEeizssZwUsNBbA">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_01DBgBxwEeizssZwUsNBbA" name="title" type="_eTc3QBhnEeiAzanQIzaG2w"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_01DokBxwEeizssZwUsNBbA" name="language" type="_eTc3QBhnEeiAzanQIzaG2w"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_01E2sBxwEeizssZwUsNBbA" name="setSubtitlesDestination" visibility="public" method="_01Gr4BxwEeizssZwUsNBbA">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_01E2sRxwEeizssZwUsNBbA" name="title" type="_eTc3QBhnEeiAzanQIzaG2w"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_01FdwBxwEeizssZwUsNBbA" name="language" type="_eTc3QBhnEeiAzanQIzaG2w"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_01IhEBxwEeizssZwUsNBbA" name="getSubtitlesOriginal" visibility="public" method="_01JvMBxwEeizssZwUsNBbA">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_01JIIBxwEeizssZwUsNBbA" type="_ymjQYBfgEeixr9hZDQbSEg" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_01KWQBxwEeizssZwUsNBbA" name="getsubtitlesDestination" visibility="public" method="_01LkYRxwEeizssZwUsNBbA">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_01LkYBxwEeizssZwUsNBbA" type="_ymjQYBfgEeixr9hZDQbSEg" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_01MygBxwEeizssZwUsNBbA" name="setError" visibility="public" method="_01OAoBxwEeizssZwUsNBbA">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_01NZkBxwEeizssZwUsNBbA" name="message" type="_eTc3QBhnEeiAzanQIzaG2w"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_01OnsBxwEeizssZwUsNBbA" name="getError" visibility="public" method="_01Qc4BxwEeizssZwUsNBbA">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_01POwBxwEeizssZwUsNBbA" type="_eTc3QBhnEeiAzanQIzaG2w" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_01UHQBxwEeizssZwUsNBbA" name="setSubtitlesDestination" visibility="public" method="_01VVYBxwEeizssZwUsNBbA">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_01UuUBxwEeizssZwUsNBbA" name="subtitlesDest" type="_ymjQYBfgEeixr9hZDQbSEg"/>
+        </ownedOperation>
+      </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_RJYpsBhnEeiAzanQIzaG2w" name="servlet">
       <packagedElement xmi:type="uml:Class" xmi:id="_DkPCoBhnEeiAzanQIzaG2w" name="Index">
@@ -452,12 +715,6 @@
             <packagedElement xmi:type="uml:Class" xmi:id="_eTq5sBhnEeiAzanQIzaG2w" name="HttpServletResponse"/>
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_eTxnYBhnEeiAzanQIzaG2w" name="ServletException"/>
-        </packagedElement>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Package" xmi:id="_nyghsBuTEeiM_Z9_g55MXg" name="com">
-        <packagedElement xmi:type="uml:Package" xmi:id="_nyghsRuTEeiM_Z9_g55MXg" name="beans">
-          <packagedElement xmi:type="uml:Class" xmi:id="_nyghshuTEeiM_Z9_g55MXg" name="Language"/>
-          <packagedElement xmi:type="uml:Class" xmi:id="_oeznABuTEeiM_Z9_g55MXg" name="Subtitles"/>
         </packagedElement>
       </packagedElement>
     </packagedElement>
@@ -515,6 +772,5 @@
   <PapyrusJava:External xmi:id="_NvFcEBuTEeiM_Z9_g55MXg" name="java.sql.SQLException" base_Classifier="_NvBxsBuTEeiM_Z9_g55MXg"/>
   <PapyrusJava:External xmi:id="_d8TRkBuTEeiM_Z9_g55MXg" name="DaoException" base_Classifier="_d8Q1UBuTEeiM_Z9_g55MXg"/>
   <PapyrusJava:External xmi:id="_nyfTkBuTEeiM_Z9_g55MXg" name="Dao" base_Classifier="_nybpMBuTEeiM_Z9_g55MXg"/>
-  <PapyrusJava:External xmi:id="_nyjlABuTEeiM_Z9_g55MXg" name="com.beans.Language" base_Classifier="_nyghshuTEeiM_Z9_g55MXg"/>
-  <PapyrusJava:External xmi:id="_oe3RYBuTEeiM_Z9_g55MXg" name="com.beans.Subtitles" base_Classifier="_oeznABuTEeiM_Z9_g55MXg"/>
+  <standard:Create xmi:id="_0zjMsBxwEeizssZwUsNBbA" base_BehavioralFeature="_0zQRwBxwEeizssZwUsNBbA"/>
 </xmi:XMI>

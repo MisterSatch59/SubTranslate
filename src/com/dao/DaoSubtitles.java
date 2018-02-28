@@ -129,7 +129,7 @@ public class DaoSubtitles extends Dao<Subtitles> {
 					subLine.setId(Integer.valueOf(tab[i]));
 					i++;
 					subLine.settStart((String) tab[i].subSequence(0, 12));
-					subLine.settStart((String) tab[i].subSequence(17, 29));
+					subLine.settEnd((String) tab[i].subSequence(17, 29));
 					i++;
 					subLine.setLine1(tab[i]);
 					i++;

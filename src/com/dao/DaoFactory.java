@@ -3,6 +3,7 @@ package com.dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 /**
  * 
@@ -67,6 +68,9 @@ public class DaoFactory {
 	public static Connection getConnection() throws SQLException {
 		conn = DriverManager.getConnection(url, user, passwd);
 		conn.setAutoCommit(false);
+		Statement statement = conn.createStatement();
+		statement.executeQuery("SET NAMES 'utf8';");
+		
         return conn; 
     }
 

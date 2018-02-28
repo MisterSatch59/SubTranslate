@@ -1,6 +1,7 @@
 package com.beans;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import com.beans.SubtitleLine;
@@ -104,9 +105,11 @@ public class Subtitles {
 	@Override
 	public String toString() {
 		String s="";
-		for (SubtitleLine subtitleLine : subTitleLines) {
+		for (Iterator<SubtitleLine> iterator = subTitleLines.iterator(); iterator.hasNext();) {
+			SubtitleLine subtitleLine = (SubtitleLine) iterator.next();
 			s+=subtitleLine.toString();
-			s+="\n\n";
+			if (iterator.hasNext()) s+="\n\n";
+			else s+="\n ";
 		}
 		return s;
 	}

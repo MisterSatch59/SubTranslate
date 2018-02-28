@@ -1,9 +1,6 @@
 package com.servlets;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -18,6 +15,7 @@ import com.dao.DaoException;
 import com.dao.DaoFactory;
 import com.file.FileException;
 import com.file.SRTFile;
+import com.model.Model;
 
 /**
  * Servlet implementation class Index
@@ -25,6 +23,11 @@ import com.file.SRTFile;
 @WebServlet("/Index")
 public class Index extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Modèle de l'application
+	 */
+	private Model model = Model.getInstance();
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -39,34 +42,37 @@ public class Index extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
+				
+		/*ServletContext context = getServletContext();
+		context.getRealPath("/WEB-INF/password_presentation.srt");
 		
-		
-		/*SRTFile f = new SRTFile();
-		ServletContext context = getServletContext();
-		Subtitles subtitles = null;
+		SRTFile f = new SRTFile();
+		Subtitles file = null;
 		try {
-			subtitles = f.open(context.getRealPath("/WEB-INF/password_presentation.srt"), new Language(), "test");
+			file = f.open(context.getRealPath("/WEB-INF/password_presentation.srt"), new Language(), "password_presentation");
 		} catch (FileException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		System.out.println(file.toString());
+		
+		try {
+			DaoFactory.getDaoSubtitles().add(file);
+		} catch (DaoException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}*/
-
-		List<Subtitles> list = null;
-		try {
-			list = DaoFactory.getDaoSubtitles().list();
-		} catch (DaoException e) {
-			e.printStackTrace();
-		}
-
-		for (Iterator<Subtitles> iterator = list.iterator(); iterator.hasNext();) {
-			Subtitles subtitles1 = (Subtitles) iterator.next();
-			try {
-				DaoFactory.getDaoSubtitles().delete(subtitles1.getId());
-			} catch (DaoException e) {
-				e.printStackTrace();
-			}
-		}
-		System.out.println("list : " + list.toString());
 		
+		
+		String[] languagesNames = model.getLanguagesNames();
+		request.setAttribute("languagesNames", languagesNames);
+		
+		String[] subtitlesOriginalsNames = model.getSubtitlesOriginalsNames();
+		request.setAttribute("subtitlesOriginalsNames", subtitlesOriginalsNames);
+		
+		String[] subtitlesNames = model.getSubtitlesNames();
+		request.setAttribute("subtitlesNames", subtitlesNames);
 		
 		this.getServletContext().getRequestDispatcher("/WEB-INF/index.jsp").forward(request, response);
 
@@ -79,7 +85,7 @@ public class Index extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		
-		
+		this.getServletContext().getRequestDispatcher("/WEB-INF/index.jsp").forward(request, response);
 		
 	}
 
