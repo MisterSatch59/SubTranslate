@@ -42,6 +42,10 @@ public class Index extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
+		
+		ServletContext context = getServletContext();
+		String adresse = context.getRealPath("/WEB-INF/SRT/");
+		model.deleteallSRT(adresse);
 				
 		/*ServletContext context = getServletContext();
 		context.getRealPath("/WEB-INF/password_presentation.srt");
@@ -75,7 +79,6 @@ public class Index extends HttpServlet {
 		request.setAttribute("subtitlesNames", subtitlesNames);
 		
 		this.getServletContext().getRequestDispatcher("/WEB-INF/index.jsp").forward(request, response);
-
 	}
 
 	/**

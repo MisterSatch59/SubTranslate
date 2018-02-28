@@ -1,5 +1,6 @@
 package com.model;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,6 +9,8 @@ import com.beans.SubtitleLine;
 import com.beans.Subtitles;
 import com.dao.DaoException;
 import com.dao.DaoFactory;
+import com.file.FileException;
+import com.file.SRTFile;
 
 public class Model {
 	/**
@@ -125,10 +128,10 @@ public class Model {
 			setError(e.getMessage());
 			e.printStackTrace();
 		}
-		
+
 		List<Subtitles> subtitlesOriginals = new ArrayList<Subtitles>();
 		for (Subtitles subtitles : list) {
-			if(subtitles.getIdOriginal()==0) {
+			if (subtitles.getIdOriginal() == 0) {
 				subtitlesOriginals.add(subtitles);
 			}
 		}
@@ -174,7 +177,7 @@ public class Model {
 	 */
 	public void setSubtitlesOriginal(String title, String language) {
 		Subtitles sub = this.getSubtitles(title, language);
-		if(sub != null)
+		if (sub != null)
 			this.subtitlesOriginal = this.getSubtitles(title, language);
 		else
 			this.setError("Erreur lors du chargement des sous titres");
@@ -238,21 +241,12 @@ public class Model {
 		return subtitlesDestination;
 	}
 
-	public void setError(String message) {
-		System.out.println(message);
-		this.errorMessage = message;
-	}
-	
-	public String getError() {
-		return this.errorMessage;
-	}
-	
 	/**
 	 * set subtitlesDestination et enregistre les modification dans la base de données
 	 * @param subtitlesDest
 	 */
 	public void setSubtitlesDestination(Subtitles subtitlesDest) {
-		this.subtitlesDestination=subtitlesDest;
+		this.subtitlesDestination = subtitlesDest;
 		try {
 			DaoFactory.getDaoSubtitles().update(this.subtitlesDestination);
 		} catch (DaoException e) {
@@ -261,4 +255,37 @@ public class Model {
 		}
 	}
 
+	public void download(String title, String language, String adresse) {
+		Subtitles sub = this.getSubtitles(title, language);
+		SRTFile f = new SRTFile();
+		try {
+			f.save(sub, adresse);
+		} catch (FileException e) {
+			this.setError("Erreur lors de l'enregistrement du fichier");
+			e.printStackTrace();
+		}
+	}
+
+	public void setError(String message) {
+		System.out.println(message);
+		this.errorMessage = message;
+	}
+
+	public String getError() {
+		return this.errorMessage;
+	}
+	
+	/**
+	 * supprime les fichier temporaire SRT
+	 * @param adresse
+	 */
+	public void deleteallSRT(String adresse) {
+		File path = new File(adresse);
+		if (path.exists()) {
+			File[] files = path.listFiles();
+			for (int i = 0; i < files.length; i++) {
+				files[i].delete();
+			}
+		}
+	}
 }

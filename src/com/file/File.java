@@ -14,9 +14,10 @@ public abstract class File {
 	/**
 	 * Permet l'enregistrement dans un fichier
 	 * @param file dossier sous titre à sauvegarder
+	 * @param adresse adresse du fichier créé
 	 * @throws FileException
 	 */
-	public abstract void save(Subtitles file) throws FileException;
+	public abstract void save(Subtitles file, String adresse) throws FileException;
 
 	/**
 	 * Permet la récupération d'un fichier
@@ -27,4 +28,5 @@ public abstract class File {
 	 * @throws FileException 
 	 */
 	public abstract Subtitles open(String adresse, Language language, String title) throws FileException;
+
 };

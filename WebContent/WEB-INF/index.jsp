@@ -44,9 +44,9 @@
 			</fieldset>
 		</form>
 		
-		<form method ="post" action="">
+		<form method ="post" action="DownloadSRT">
 			<fieldset>
-				<legend>Télécharger un fichier SRT : </legend>
+				<legend>Générer un fichier SRT : </legend>
 				<label>Fichier : </label>
 				<select  name = "subtitlesNames">
 					<c:forEach items="${ subtitlesNames }" var="subtitlesName" varStatus="status">

@@ -22,7 +22,7 @@ import com.file.File;
 public class SRTFile extends File {
 
 	@Override
-	public void save(Subtitles file) throws FileException {
+	public void save(Subtitles file, String adresse) throws FileException {
 		String enter = System.getProperty("line.separator");
 		List<SubtitleLine> subtitleLines = file.getsubTitleLines();
 		String enr = "";
@@ -40,12 +40,13 @@ public class SRTFile extends File {
 		BufferedWriter output = null;
 		try {
 			//TODO A voir où l'enregistrer pour le télécharger ensuite
-			fw = new FileWriter("D:\\eclipse-workspace\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\SubTranslate\\WEB-INF\\" +file.getTitle() + "." +file.getLanguage().getAbreviation() + ".srt", false);
+			fw = new FileWriter(adresse +file.getTitle() + "." +file.getLanguage().getAbreviation() + ".srt", false);
 			output = new BufferedWriter(fw);
 			output.write(enr);
 			output.flush();
 			output.close();
 		} catch (IOException ioe) {
+			ioe.printStackTrace();
 			throw new FileException("Erreur lors de la création du fichier srt");
 		}
 	}
