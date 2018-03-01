@@ -2,7 +2,6 @@ package com.servlets;
 
 import java.io.IOException;
 
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,12 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
-import com.beans.Language;
-import com.beans.Subtitles;
-import com.dao.DaoException;
-import com.dao.DaoFactory;
-import com.file.FileException;
-import com.file.SRTFile;
 import com.model.Model;
 
 /**
@@ -38,16 +31,16 @@ public class Index extends HttpServlet {
     }
 
 	/**
+	 * Tranmet les élément nécéssaire de la page d'accueil du modèle vers la vue
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		
-		ServletContext context = getServletContext();
-		String adresse = context.getRealPath("/WEB-INF/");
+		String adresse = getServletContext().getRealPath("/WEB-INF/");
 		model.setAdresseWebInf(adresse);
-		model.deleteallSRT();
+
 
 		String[] languagesNames = model.getLanguagesNames();
 		request.setAttribute("languagesNames", languagesNames);
@@ -60,12 +53,12 @@ public class Index extends HttpServlet {
 		
 		String error = model.getError();
 		request.setAttribute("error", error);
-		model.setError("");
 		
 		this.getServletContext().getRequestDispatcher("/WEB-INF/index.jsp").forward(request, response);
 	}
 
 	/**
+	 * Gestion du formulaire d'upload
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -78,6 +71,9 @@ public class Index extends HttpServlet {
 		Part part = request.getPart("fichier");
 		
 		model.save(part, title, languageName);
+		
+		String error = model.getError();
+		request.setAttribute("error", error);
 		
 		this.doGet(request, response);
 		

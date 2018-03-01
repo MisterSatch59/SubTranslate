@@ -46,7 +46,7 @@ public class SRTFile extends File {
 			output.close();
 		} catch (IOException ioe) {
 			ioe.printStackTrace();
-			throw new FileException("Erreur lors de la création du fichier srt");
+			throw new FileException("Erreur lors de la création du fichier srt.");
 		}
 	}
 	

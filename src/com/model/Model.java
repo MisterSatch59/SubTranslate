@@ -32,9 +32,13 @@ public class Model {
 	 */
 	private Subtitles subtitlesDestination;
 	
-	private String adresseWebInf;
-	
+	/**
+	 * taille tampon pour l'upload de fichier
+	 */
 	public int tailleTampon = 10240;
+	/**
+	 * dossier contenant temporairement les fichier SRT (download)
+	 */
 	public String cheminFichier;
 
 	/**
@@ -60,10 +64,10 @@ public class Model {
 	}
 	
 	/**
-	 * @param adresseWebInf the adresseWebInf to set
+	 * permet l'obtention de l'adresse réel de WebInf 
+	 * @param adresseWebInf adresse de WebInf obtenu avec getServletContext().getRealPath("/WEB-INF/") dans la servlet Index
 	 */
 	public void setAdresseWebInf(String adresseWebInf) {
-		this.adresseWebInf = adresseWebInf;
 		this.cheminFichier = adresseWebInf + "SRT/";
 	}
 
@@ -206,7 +210,7 @@ public class Model {
 	 * setter de subtitlesDestination à partir de son titre et de sa langue: -
 	 * recherche dans la base de donné les sous titres correspondant si existant -
 	 * sinon : crée l'objet avec le même nombre de ligne (vide) que le
-	 * subtitlesOriginal et les mêmes parametres
+	 * subtitlesOriginal et les mêmes parametres et l'enregistre dans la base de données
 	 * 
 	 * @param title titre
 	 * @param language nom de la langue
@@ -274,7 +278,12 @@ public class Model {
 		}
 	}
 
-	public void download(String title, String language) {
+	/**
+	 * Permet de créer le fichier SRT correspondant au titre et à la langue et de l'enregistrer dans le dossier SRT
+	 * @param title titre
+	 * @param language langue
+	 */
+	public void createSRT(String title, String language) {
 		String adresse = this.cheminFichier;
 		Subtitles sub = this.getSubtitles(title, language);
 		SRTFile f = new SRTFile();
@@ -286,36 +295,29 @@ public class Model {
 		}
 	}
 
+
+	/**
+	 * Permet d'éditer un message d'erreur
+	 * @param message message d'erreur
+	 */
 	public void setError(String message) {
 		System.out.println(message);
 		this.errorMessage = message;
 	}
-
-	public String getError() {
-		return this.errorMessage;
-	}
 	
 	/**
-	 * supprime les fichier temporaire SRT
-	 * @param adresse
+	 * Permet d'obtenir le message d'erreur enregistré et de le réinitialiser
+	 * @return
 	 */
-	public void deleteallSRT() {
-		String adresse = this.cheminFichier;
-		File path = new File(adresse);
-		if (path.exists()) {
-			File[] files = path.listFiles();
-			for (int i = 0; i < files.length; i++) {
-				files[i].delete();
-			}
-		}
+	public String getError() {
+		String s = this.errorMessage;
+		this.errorMessage = "";
+		return s;
 	}
 	
 	
-	
-
-	
 	/**
-	 * Enregistrement d'un fichier SRT uploadé - issu du cours
+	 * Enregistrement d'un fichier SRT uploadé
 	 * @param part
 	 * @param title
 	 * @param languageName
@@ -327,30 +329,33 @@ public class Model {
 
 		// Si on a bien un fichier et qu'il s'agit d'un fichier SRT
 		if (nomFichier != null && !nomFichier.isEmpty() && nomFichier.contains(".srt") ) {
-			String nomChamp = part.getName();
 			// Corrige un bug du fonctionnement d'Internet Explorer
 			nomFichier = nomFichier.substring(nomFichier.lastIndexOf('/') + 1)
 					.substring(nomFichier.lastIndexOf('\\') + 1);
 
 			// On écrit définitivement le fichier sur le disque
 			ecrireFichier(part, nomFichier, cheminFichier);
-		}		
+		}else {
+			this.setError("Erreur lors du chargement du fichier.");
+		}
 		SRTFile f = new SRTFile();
 		Subtitles file = null;
 		try {
 			file = f.open(this.cheminFichier+nomFichier, this.getLanguages(languageName), title);
 		} catch (FileException e) {
 			e.printStackTrace();
+			this.setError("Erreur lors du chargement du fichier.");
 		}
 		try {
 			DaoFactory.getDaoSubtitles().add(file);
 		} catch (DaoException e) {
 			e.printStackTrace();
+			this.setError("Erreur lors du chargement du fichier.");
 		}
 	}
 	
 	/**
-	 * Méthode issue du cours pour le traitement du fichier
+	 * Méthode interne de traitement du fichier à uploader (issue du cours)
 	 * @param part
 	 * @param nomFichier
 	 * @param chemin
@@ -368,6 +373,7 @@ public class Model {
 				sortie.write(tampon, 0, longueur);
 			}
 		} catch (Exception e) {
+			this.setError("Erreur lors du chargement du fichier.");
 			e.printStackTrace();
 		}
 		finally {
@@ -381,8 +387,9 @@ public class Model {
 			}
 		}
 	}
+	
 	/**
-	 * Méthode issue du cours pour le traitement du fichier
+	 * Méthode interne de traitement du fichier à uploader (issue du cours)
 	 * @param part
 	 * @return
 	 */
@@ -395,7 +402,4 @@ public class Model {
 		return null;
 	}
 
-
-	
-	
 }

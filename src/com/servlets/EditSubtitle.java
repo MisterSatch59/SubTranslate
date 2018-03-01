@@ -34,6 +34,7 @@ public class EditSubtitle extends HttpServlet {
 	}
 
 	/**
+	 * Affichage de la page de traduction avec le travail déjà réalisé
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
@@ -72,13 +73,13 @@ public class EditSubtitle extends HttpServlet {
 
 		String error = model.getError();
 		request.setAttribute("error", error);
-		model.setError("");
 		
 		this.getServletContext().getRequestDispatcher("/WEB-INF/editSubtitle.jsp").forward(request, response);
 
 	}
 
 	/**
+	 * Enregistrement des modifications réalisés dans la traduction
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
@@ -120,11 +121,15 @@ public class EditSubtitle extends HttpServlet {
 
 		String error = model.getError();
 		request.setAttribute("error", error);
-		model.setError("");
 		
 		this.getServletContext().getRequestDispatcher("/WEB-INF/editSubtitle.jsp").forward(request, response);
 	}
 
+	/**
+	 * Retourne le tableau de String nécéssaire à l'affichage d'un SubtitleLine
+	 * @param subLine
+	 * @return
+	 */
 	private String[] affiche(SubtitleLine subLine) {
 		String[] tab = new String[4];
 		tab[0] = "" + subLine.getId();

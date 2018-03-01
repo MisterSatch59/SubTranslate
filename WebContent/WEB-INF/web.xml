@@ -25,15 +25,6 @@
 		<url-pattern>/editSubtitle</url-pattern>
 	</servlet-mapping>
 
-	<servlet>
-		<servlet-name>DownloadSRT</servlet-name>
-		<servlet-class>com.servlets.DownloadSRT</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>DownloadSRT</servlet-name>
-		<url-pattern>/downloadSRT</url-pattern>
-	</servlet-mapping>
-
 	<jsp-config>
 		<jsp-property-group>
 			<url-pattern>*.jsp</url-pattern>
