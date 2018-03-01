@@ -1,8 +1,14 @@
 package com.model;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.servlet.http.Part;
 
 import com.beans.Language;
 import com.beans.SubtitleLine;
@@ -25,6 +31,11 @@ public class Model {
 	 * Sous titre traduit
 	 */
 	private Subtitles subtitlesDestination;
+	
+	private String adresseWebInf;
+	
+	public int tailleTampon = 10240;
+	public String cheminFichier;
 
 	/**
 	 * instance unique de Model
@@ -35,7 +46,7 @@ public class Model {
 	 * Constructeur privé
 	 */
 	private Model() {
-
+		
 	}
 	/**
 	 * Acces à l'instance unique de Model
@@ -46,6 +57,14 @@ public class Model {
 		if (instance == null)
 			instance = new Model();
 		return instance;
+	}
+	
+	/**
+	 * @param adresseWebInf the adresseWebInf to set
+	 */
+	public void setAdresseWebInf(String adresseWebInf) {
+		this.adresseWebInf = adresseWebInf;
+		this.cheminFichier = adresseWebInf + "SRT/";
 	}
 
 	/**
@@ -255,7 +274,8 @@ public class Model {
 		}
 	}
 
-	public void download(String title, String language, String adresse) {
+	public void download(String title, String language) {
+		String adresse = this.cheminFichier;
 		Subtitles sub = this.getSubtitles(title, language);
 		SRTFile f = new SRTFile();
 		try {
@@ -279,7 +299,8 @@ public class Model {
 	 * supprime les fichier temporaire SRT
 	 * @param adresse
 	 */
-	public void deleteallSRT(String adresse) {
+	public void deleteallSRT() {
+		String adresse = this.cheminFichier;
 		File path = new File(adresse);
 		if (path.exists()) {
 			File[] files = path.listFiles();
@@ -288,4 +309,93 @@ public class Model {
 			}
 		}
 	}
+	
+	
+	
+
+	
+	/**
+	 * Enregistrement d'un fichier SRT uploadé - issu du cours
+	 * @param part
+	 * @param title
+	 * @param languageName
+	 * @throws IOException 
+	 */
+	public void save(Part part, String title, String languageName) throws IOException {
+		// On vérifie qu'on a bien reçu un fichier
+		String nomFichier = getNomFichier(part);
+
+		// Si on a bien un fichier et qu'il s'agit d'un fichier SRT
+		if (nomFichier != null && !nomFichier.isEmpty() && nomFichier.contains(".srt") ) {
+			String nomChamp = part.getName();
+			// Corrige un bug du fonctionnement d'Internet Explorer
+			nomFichier = nomFichier.substring(nomFichier.lastIndexOf('/') + 1)
+					.substring(nomFichier.lastIndexOf('\\') + 1);
+
+			// On écrit définitivement le fichier sur le disque
+			ecrireFichier(part, nomFichier, cheminFichier);
+		}		
+		SRTFile f = new SRTFile();
+		Subtitles file = null;
+		try {
+			file = f.open(this.cheminFichier+nomFichier, this.getLanguages(languageName), title);
+		} catch (FileException e) {
+			e.printStackTrace();
+		}
+		try {
+			DaoFactory.getDaoSubtitles().add(file);
+		} catch (DaoException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/**
+	 * Méthode issue du cours pour le traitement du fichier
+	 * @param part
+	 * @param nomFichier
+	 * @param chemin
+	 * @throws IOException
+	 */
+	private void ecrireFichier(Part part, String nomFichier, String chemin) throws IOException {
+		BufferedInputStream entree = null;
+		BufferedOutputStream sortie = null;
+		try {
+			entree = new BufferedInputStream(part.getInputStream(), tailleTampon);
+			sortie = new BufferedOutputStream(new FileOutputStream(new File(chemin + nomFichier)), tailleTampon);
+			byte[] tampon = new byte[tailleTampon];
+			int longueur;
+			while ((longueur = entree.read(tampon)) > 0) {
+				sortie.write(tampon, 0, longueur);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				sortie.close();
+			} catch (IOException ignore) {
+			}
+			try {
+				entree.close();
+			} catch (IOException ignore) {
+			}
+		}
+	}
+	/**
+	 * Méthode issue du cours pour le traitement du fichier
+	 * @param part
+	 * @return
+	 */
+	private static String getNomFichier(Part part) {
+		for (String contentDisposition : part.getHeader("content-disposition").split(";")) {
+			if (contentDisposition.trim().startsWith("filename")) {
+				return contentDisposition.substring(contentDisposition.indexOf('=') + 1).trim().replace("\"", "");
+			}
+		}
+		return null;
+	}
+
+
+	
+	
 }

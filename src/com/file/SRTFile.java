@@ -39,7 +39,6 @@ public class SRTFile extends File {
 		FileWriter fw;
 		BufferedWriter output = null;
 		try {
-			//TODO A voir où l'enregistrer pour le télécharger ensuite
 			fw = new FileWriter(adresse +file.getTitle() + "." +file.getLanguage().getAbreviation() + ".srt", false);
 			output = new BufferedWriter(fw);
 			output.write(enr);

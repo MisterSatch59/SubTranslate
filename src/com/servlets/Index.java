@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 
 import com.beans.Language;
 import com.beans.Subtitles;
@@ -44,31 +45,10 @@ public class Index extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		
 		ServletContext context = getServletContext();
-		String adresse = context.getRealPath("/WEB-INF/SRT/");
-		model.deleteallSRT(adresse);
-				
-		/*ServletContext context = getServletContext();
-		context.getRealPath("/WEB-INF/password_presentation.srt");
-		
-		SRTFile f = new SRTFile();
-		Subtitles file = null;
-		try {
-			file = f.open(context.getRealPath("/WEB-INF/password_presentation.srt"), new Language(), "password_presentation");
-		} catch (FileException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		System.out.println(file.toString());
-		
-		try {
-			DaoFactory.getDaoSubtitles().add(file);
-		} catch (DaoException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
-		
-		
+		String adresse = context.getRealPath("/WEB-INF/");
+		model.setAdresseWebInf(adresse);
+		model.deleteallSRT();
+
 		String[] languagesNames = model.getLanguagesNames();
 		request.setAttribute("languagesNames", languagesNames);
 		
@@ -77,6 +57,10 @@ public class Index extends HttpServlet {
 		
 		String[] subtitlesNames = model.getSubtitlesNames();
 		request.setAttribute("subtitlesNames", subtitlesNames);
+		
+		String error = model.getError();
+		request.setAttribute("error", error);
+		model.setError("");
 		
 		this.getServletContext().getRequestDispatcher("/WEB-INF/index.jsp").forward(request, response);
 	}
@@ -88,7 +72,14 @@ public class Index extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		
-		this.getServletContext().getRequestDispatcher("/WEB-INF/index.jsp").forward(request, response);
+		String title = request.getParameter("title");
+		String languageName = request.getParameter("languageName");
+		
+		Part part = request.getPart("fichier");
+		
+		model.save(part, title, languageName);
+		
+		this.doGet(request, response);
 		
 	}
 

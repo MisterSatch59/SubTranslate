@@ -70,6 +70,10 @@ public class EditSubtitle extends HttpServlet {
 		}
 		request.setAttribute("destination", destination);
 
+		String error = model.getError();
+		request.setAttribute("error", error);
+		model.setError("");
+		
 		this.getServletContext().getRequestDispatcher("/WEB-INF/editSubtitle.jsp").forward(request, response);
 
 	}
@@ -91,7 +95,6 @@ public class EditSubtitle extends HttpServlet {
 			subtitleLine.setLine2(request.getParameter("line2-"+j));
 		}
 		subtitlesDest.setsubTitleLines(subTitleLines);
-		System.out.println(subtitlesDest.toString());
 		model.setSubtitlesDestination(subtitlesDest);
 		
 		
@@ -115,6 +118,10 @@ public class EditSubtitle extends HttpServlet {
 		}
 		request.setAttribute("destination", destination);
 
+		String error = model.getError();
+		request.setAttribute("error", error);
+		model.setError("");
+		
 		this.getServletContext().getRequestDispatcher("/WEB-INF/editSubtitle.jsp").forward(request, response);
 	}
 

@@ -45,20 +45,25 @@ public class DownloadSRT extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
-		
+
 		String fileName = request.getParameter("subtitlesNames");
 		String name = fileName.substring(0, fileName.length() - 3);
 		String language = fileName.substring(fileName.length() - 2, fileName.length());
 		
 		ServletContext context = getServletContext();
-		String adresse = context.getRealPath("/WEB-INF/SRT/");
-		System.out.println(adresse);
-		model.download(name, language, adresse);
+		String adresse = context.getRealPath("/WEB-INF/");
+		model.setAdresseWebInf(adresse);
+		model.download(name, language);
+		adresse+="SRT/";
 		
 		fileName+=".srt";
 		request.setAttribute("adresse", adresse);
 		request.setAttribute("fileName", fileName);
 		
+		String error = model.getError();
+		request.setAttribute("error", error);
+		model.setError("");
+				
 		this.getServletContext().getRequestDispatcher("/WEB-INF/downloadSRT.jsp").forward(request, response);
 	}
 
