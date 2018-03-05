@@ -12,7 +12,7 @@ CREATE TABLE languages (
 CREATE TABLE subtitles (
                 id INT AUTO_INCREMENT NOT NULL,
                 title VARCHAR(100) NOT NULL,
-                sub LONGBLOB NOT NULL,
+                sub TEXT NOT NULL,
                 language_abreviation CHAR(2) NOT NULL,
                 original_id INT,
                 PRIMARY KEY (id)

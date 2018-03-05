@@ -38,7 +38,7 @@ public class DaoSubtitles extends Dao<Subtitles> {
 				preparedStatement.setInt(3, id);
 			}
 			preparedStatement.setString(4, subtitles.toString());
-
+			
 			preparedStatement.executeUpdate();
 			connexion.commit();
 		} catch (SQLException e) {
@@ -62,6 +62,8 @@ public class DaoSubtitles extends Dao<Subtitles> {
 				throw new DaoException("Impossible de communiquer avec la base de données");
 			}
 		}
+		
+
 	}
 
 	@Override
