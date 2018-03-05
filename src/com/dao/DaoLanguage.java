@@ -36,6 +36,7 @@ public class DaoLanguage extends Dao<Language> {
 		try {
 			conn = DaoFactory.getConnection();
 		} catch (SQLException e1) {
+			e1.printStackTrace();
 			throw new DaoException("Impossible de communiquer avec la base de données");
 		}
 		
@@ -58,6 +59,7 @@ public class DaoLanguage extends Dao<Language> {
 				languages.add(language);
 			}
 		} catch (SQLException e) {
+			e.printStackTrace();
 			throw new DaoException("Impossible de communiquer avec la base de données");
 		} finally {
 			try {
@@ -65,6 +67,7 @@ public class DaoLanguage extends Dao<Language> {
 					conn.close();
 				}
 			} catch (SQLException e) {
+				e.printStackTrace();
 				throw new DaoException("Impossible de communiquer avec la base de données");
 			}
 		}

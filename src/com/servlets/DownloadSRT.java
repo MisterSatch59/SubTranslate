@@ -60,7 +60,6 @@ public class DownloadSRT extends HttpServlet {
 		String adresse = context.getRealPath("/WEB-INF/");
 		model.setAdresseWebInf(adresse);
 		model.createSRT(name, language);
-		adresse+="SRT/";
 		
 		fileName+=".srt";
 		request.setAttribute("adresse", adresse);

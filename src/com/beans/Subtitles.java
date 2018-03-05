@@ -28,7 +28,7 @@ public class Subtitles {
 	/**
 	 * Identifiant des sous titre originaux
 	 */
-	private int idOriginal;
+	private Integer idOriginal;
 	/**
 	 * Listes des sous titres
 	 */
@@ -57,7 +57,7 @@ public class Subtitles {
 		this.id = 0;
 		this.title = "";
 		this.language = new Language();
-		this.idOriginal = 0;
+		this.idOriginal = null;
 		this.subTitleLines = new ArrayList<SubtitleLine>();
 	}
 
@@ -86,11 +86,11 @@ public class Subtitles {
 		this.language = language;
 	}
 
-	public int getIdOriginal() {
+	public Integer getIdOriginal() {
 		return idOriginal;
 	}
 
-	public void setIdOriginal(int idOriginal) {
+	public void setIdOriginal(Integer idOriginal) {
 		this.idOriginal = idOriginal;
 	}
 

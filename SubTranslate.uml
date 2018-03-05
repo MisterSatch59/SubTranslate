@@ -433,27 +433,35 @@
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_LcYqoBhnEeiAzanQIzaG2w" name="model">
-      <packagedElement xmi:type="uml:Class" xmi:id="_0ypNwBxwEeizssZwUsNBbA" name="Model" visibility="public">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_0ytfMBxwEeizssZwUsNBbA" name="errorMessage" visibility="private" type="_eTc3QBhnEeiAzanQIzaG2w" isUnique="false">
-          <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_0y0M4BxwEeizssZwUsNBbA" name="defaultValue">
+      <packagedElement xmi:type="uml:Class" xmi:id="_B46DEB1mEeimfPw4PtkLMw" name="Model" visibility="public">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_B49tcB1mEeimfPw4PtkLMw" name="errorMessage" visibility="private" type="_eTc3QBhnEeiAzanQIzaG2w" isUnique="false">
+          <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_B4_ioB1mEeimfPw4PtkLMw" name="defaultValue">
             <language>JAVA</language>
             <body>&quot;&quot;</body>
           </defaultValue>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_0y-k8BxwEeizssZwUsNBbA" name="subtitlesOriginal" visibility="private" type="_ymjQYBfgEeixr9hZDQbSEg" isUnique="false"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_0zDdcBxwEeizssZwUsNBbA" name="subtitlesDestination" visibility="private" type="_ymjQYBfgEeixr9hZDQbSEg" isUnique="false"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_0zIV8BxwEeizssZwUsNBbA" name="instance" visibility="private" isStatic="true" type="_0ypNwBxwEeizssZwUsNBbA" isUnique="false">
-          <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_0zOckBxwEeizssZwUsNBbA" name="defaultValue">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_B8b4MB1mEeimfPw4PtkLMw" name="subtitlesOriginal" visibility="private" type="_B5FCMB1mEeimfPw4PtkLMw" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_B8fikB1mEeimfPw4PtkLMw" name="subtitlesDestination" visibility="private" type="_B5FCMB1mEeimfPw4PtkLMw" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_B8il4B1mEeimfPw4PtkLMw" name="tailleTampon" visibility="public" isUnique="false">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+          <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_B8kbEB1mEeimfPw4PtkLMw" name="defaultValue">
+            <language>JAVA</language>
+            <body>10240</body>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_B8m3UB1mEeimfPw4PtkLMw" name="cheminFichier" visibility="public" type="_eTc3QBhnEeiAzanQIzaG2w" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_B8osgB1mEeimfPw4PtkLMw" name="instance" visibility="private" isStatic="true" type="_B46DEB1mEeimfPw4PtkLMw" isUnique="false">
+          <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_B8qhsB1mEeimfPw4PtkLMw" name="defaultValue">
             <language>JAVA</language>
             <body>new Model()</body>
           </defaultValue>
         </ownedAttribute>
-        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_0z3VwBxwEeizssZwUsNBbA" name="Model" specification="_0zQRwBxwEeizssZwUsNBbA">
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_B80SsB1mEeimfPw4PtkLMw" name="Model" specification="_B8s98B1mEeimfPw4PtkLMw">
           <language>JAVA</language>
           <body>&#xD;
 </body>
         </ownedBehavior>
-        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_0z-DcBxwEeizssZwUsNBbA" name="getInstance" specification="_0z5yABxwEeizssZwUsNBbA">
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_B87ncB1mEeimfPw4PtkLMw" name="getInstance" specification="_B82u8B1mEeimfPw4PtkLMw">
           <language>JAVA</language>
           <body>&#xD;
     if (instance == null)&#xD;
@@ -461,7 +469,13 @@
     return instance;&#xD;
 </body>
         </ownedBehavior>
-        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_00UBsBxwEeizssZwUsNBbA" name="getLanguagesNames" specification="_00EKEBxwEeizssZwUsNBbA">
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_B9DjQB1mEeimfPw4PtkLMw" name="setAdresseWebInf" specification="_B8_44B1mEeimfPw4PtkLMw">
+          <language>JAVA</language>
+          <body>&#xD;
+    this.cheminFichier = adresseWebInf + &quot;SRT/&quot;;&#xD;
+</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_B9K4AB1mEeimfPw4PtkLMw" name="getLanguagesNames" specification="_B9FYcB1mEeimfPw4PtkLMw">
           <language>JAVA</language>
           <body>&#xD;
     List&lt;Language> list = null;&#xD;
@@ -480,7 +494,7 @@
     return result;&#xD;
 </body>
         </ownedBehavior>
-        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_00lugBxwEeizssZwUsNBbA" name="getLanguages" specification="_00b9gBxwEeizssZwUsNBbA">
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_B9XFQB1mEeimfPw4PtkLMw" name="getLanguages" specification="_B9NUQB1mEeimfPw4PtkLMw">
           <language>JAVA</language>
           <body>&#xD;
     List&lt;Language> list = null;&#xD;
@@ -499,7 +513,7 @@
     return result;&#xD;
 </body>
         </ownedBehavior>
-        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_00yi0BxwEeizssZwUsNBbA" name="getSubtitlesNames" specification="_00scMBxwEeizssZwUsNBbA">
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_B9dy8B1mEeimfPw4PtkLMw" name="getSubtitlesNames" specification="_B9Y6cB1mEeimfPw4PtkLMw">
           <language>JAVA</language>
           <body>&#xD;
     List&lt;Subtitles> list = null;&#xD;
@@ -518,7 +532,7 @@
     return result;&#xD;
 </body>
         </ownedBehavior>
-        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_005QgBxwEeizssZwUsNBbA" name="getSubtitlesOriginalsNames" specification="_001mIBxwEeizssZwUsNBbA">
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_B9iEYB1mEeimfPw4PtkLMw" name="getSubtitlesOriginalsNames" specification="_B9eaAB1mEeimfPw4PtkLMw">
           <language>JAVA</language>
           <body>&#xD;
     List&lt;Subtitles> list = null;&#xD;
@@ -543,7 +557,7 @@
     return result;&#xD;
 </body>
         </ownedBehavior>
-        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_01BMURxwEeizssZwUsNBbA" name="getSubtitles" specification="_006eoBxwEeizssZwUsNBbA">
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_B9oLAB1mEeimfPw4PtkLMw" name="getSubtitles" specification="_B9j5kB1mEeimfPw4PtkLMw">
           <language>JAVA</language>
           <body>&#xD;
     List&lt;Subtitles> list = null;&#xD;
@@ -562,7 +576,7 @@
     return result;&#xD;
 </body>
         </ownedBehavior>
-        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_01EPoBxwEeizssZwUsNBbA" name="setSubtitlesOriginal" specification="_01CacBxwEeizssZwUsNBbA">
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_B9vfwB1mEeimfPw4PtkLMw" name="setSubtitlesOriginal" specification="_B9rOUB1mEeimfPw4PtkLMw">
           <language>JAVA</language>
           <body>&#xD;
     Subtitles sub = this.getSubtitles(title, language);&#xD;
@@ -572,7 +586,7 @@
         this.setError(&quot;Erreur lors du chargement des sous titres&quot;);&#xD;
 </body>
         </ownedBehavior>
-        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_01Gr4BxwEeizssZwUsNBbA" name="setSubtitlesDestination" specification="_01E2sBxwEeizssZwUsNBbA">
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_B94CoB1mEeimfPw4PtkLMw" name="setSubtitlesDestination" specification="_B9zKIB1mEeimfPw4PtkLMw">
           <language>JAVA</language>
           <body>&#xD;
     Subtitles subtitles = this.getSubtitles(title, this.getLanguages(language).getAbreviation());&#xD;
@@ -605,32 +619,19 @@
     }&#xD;
 </body>
         </ownedBehavior>
-        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_01JvMBxwEeizssZwUsNBbA" name="getSubtitlesOriginal" specification="_01IhEBxwEeizssZwUsNBbA">
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_B98UEB1mEeimfPw4PtkLMw" name="getSubtitlesOriginal" specification="_B9530B1mEeimfPw4PtkLMw">
           <language>JAVA</language>
           <body>&#xD;
     return subtitlesOriginal;&#xD;
 </body>
         </ownedBehavior>
-        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_01LkYRxwEeizssZwUsNBbA" name="getsubtitlesDestination" specification="_01KWQBxwEeizssZwUsNBbA">
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_B-BMkB1mEeimfPw4PtkLMw" name="getsubtitlesDestination" specification="_B9-JQB1mEeimfPw4PtkLMw">
           <language>JAVA</language>
           <body>&#xD;
     return subtitlesDestination;&#xD;
 </body>
         </ownedBehavior>
-        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_01OAoBxwEeizssZwUsNBbA" name="setError" specification="_01MygBxwEeizssZwUsNBbA">
-          <language>JAVA</language>
-          <body>&#xD;
-    System.out.println(message);&#xD;
-    this.errorMessage = message;&#xD;
-</body>
-        </ownedBehavior>
-        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_01Qc4BxwEeizssZwUsNBbA" name="getError" specification="_01OnsBxwEeizssZwUsNBbA">
-          <language>JAVA</language>
-          <body>&#xD;
-    return this.errorMessage;&#xD;
-</body>
-        </ownedBehavior>
-        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_01VVYBxwEeizssZwUsNBbA" name="setSubtitlesDestination" specification="_01UHQBxwEeizssZwUsNBbA">
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_B-GsIB1mEeimfPw4PtkLMw" name="setSubtitlesDestination" specification="_B-Do0B1mEeimfPw4PtkLMw">
           <language>JAVA</language>
           <body>&#xD;
     this.subtitlesDestination = subtitlesDest;&#xD;
@@ -642,68 +643,467 @@
     }&#xD;
 </body>
         </ownedBehavior>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_0zQRwBxwEeizssZwUsNBbA" name="Model" visibility="private" method="_0z3VwBxwEeizssZwUsNBbA"/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_0z5yABxwEeizssZwUsNBbA" name="getInstance" visibility="public" isStatic="true" method="_0z-DcBxwEeizssZwUsNBbA">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_0z8OQBxwEeizssZwUsNBbA" type="_0ypNwBxwEeizssZwUsNBbA" direction="return"/>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_B-On8B1mEeimfPw4PtkLMw" name="createSRT" specification="_B-JvcB1mEeimfPw4PtkLMw">
+          <language>JAVA</language>
+          <body>&#xD;
+    String adresse = this.cheminFichier;&#xD;
+    Subtitles sub = this.getSubtitles(title, language);&#xD;
+    SRTFile f = new SRTFile();&#xD;
+    try {&#xD;
+        f.save(sub, adresse);&#xD;
+    } catch (FileException e) {&#xD;
+        this.setError(&quot;Erreur lors de l'enregistrement du fichier&quot;);&#xD;
+        e.printStackTrace();&#xD;
+    }&#xD;
+</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_B-SSUB1mEeimfPw4PtkLMw" name="setError" specification="_B-QdIB1mEeimfPw4PtkLMw">
+          <language>JAVA</language>
+          <body>&#xD;
+    System.out.println(message);&#xD;
+    this.errorMessage = message;&#xD;
+</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_B-V8sB1mEeimfPw4PtkLMw" name="getError" specification="_B-UHgB1mEeimfPw4PtkLMw">
+          <language>JAVA</language>
+          <body>&#xD;
+    String s = this.errorMessage;&#xD;
+    this.errorMessage = &quot;&quot;;&#xD;
+    return s;&#xD;
+</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_B-hi4B1mEeimfPw4PtkLMw" name="save" specification="_B-a1MB1mEeimfPw4PtkLMw">
+          <language>JAVA</language>
+          <body>&#xD;
+    // On vérifie qu'on a bien reçu un fichier&#xD;
+    String nomFichier = getNomFichier(part);&#xD;
+    // Si on a bien un fichier et qu'il s'agit d'un fichier SRT&#xD;
+    if (nomFichier != null &amp;&amp; !nomFichier.isEmpty() &amp;&amp; nomFichier.contains(&quot;.srt&quot;)) {&#xD;
+        // Corrige un bug du fonctionnement d'Internet Explorer&#xD;
+        nomFichier = nomFichier.substring(nomFichier.lastIndexOf('/') + 1).substring(nomFichier.lastIndexOf('\\') + 1);&#xD;
+        ecrireFichier(part, nomFichier, cheminFichier);&#xD;
+    } else {&#xD;
+        this.setError(&quot;Erreur lors du chargement du fichier.&quot;);&#xD;
+    }&#xD;
+    SRTFile f = new SRTFile();&#xD;
+    Subtitles file = null;&#xD;
+    try {&#xD;
+        file = f.open(this.cheminFichier + nomFichier, this.getLanguages(languageName), title);&#xD;
+    } catch (FileException e) {&#xD;
+        e.printStackTrace();&#xD;
+        this.setError(&quot;Erreur lors du chargement du fichier.&quot;);&#xD;
+    }&#xD;
+    try {&#xD;
+        DaoFactory.getDaoSubtitles().add(file);&#xD;
+    } catch (DaoException e) {&#xD;
+        e.printStackTrace();&#xD;
+        this.setError(&quot;Erreur lors du chargement du fichier.&quot;);&#xD;
+    }&#xD;
+</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_B-qFwB1mEeimfPw4PtkLMw" name="ecrireFichier" specification="_B-jYEB1mEeimfPw4PtkLMw">
+          <language>JAVA</language>
+          <body>&#xD;
+    BufferedInputStream entree = null;&#xD;
+    BufferedOutputStream sortie = null;&#xD;
+    try {&#xD;
+        entree = new BufferedInputStream(part.getInputStream(), tailleTampon);&#xD;
+        sortie = new BufferedOutputStream(new FileOutputStream(new File(chemin + nomFichier)), tailleTampon);&#xD;
+        byte[] tampon = new byte[tailleTampon];&#xD;
+        int longueur;&#xD;
+        while ((longueur = entree.read(tampon)) > 0) {&#xD;
+            sortie.write(tampon, 0, longueur);&#xD;
+        }&#xD;
+    } catch (Exception e) {&#xD;
+        this.setError(&quot;Erreur lors du chargement du fichier.&quot;);&#xD;
+        e.printStackTrace();&#xD;
+    } finally {&#xD;
+        try {&#xD;
+            sortie.close();&#xD;
+        } catch (IOException ignore) {&#xD;
+        }&#xD;
+        try {&#xD;
+            entree.close();&#xD;
+        } catch (IOException ignore) {&#xD;
+        }&#xD;
+    }&#xD;
+</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_B-wMYB1mEeimfPw4PtkLMw" name="getNomFichier" specification="_B-siAB1mEeimfPw4PtkLMw">
+          <language>JAVA</language>
+          <body>&#xD;
+    for (String contentDisposition : part.getHeader(&quot;content-disposition&quot;).split(&quot;;&quot;)) {&#xD;
+        if (contentDisposition.trim().startsWith(&quot;filename&quot;)) {&#xD;
+            return contentDisposition.substring(contentDisposition.indexOf('=') + 1).trim().replace(&quot;\&quot;&quot;, &quot;&quot;);&#xD;
+        }&#xD;
+    }&#xD;
+    return null;&#xD;
+</body>
+        </ownedBehavior>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_B8s98B1mEeimfPw4PtkLMw" name="Model" visibility="private" method="_B80SsB1mEeimfPw4PtkLMw"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_B82u8B1mEeimfPw4PtkLMw" name="getInstance" visibility="public" isStatic="true" method="_B87ncB1mEeimfPw4PtkLMw">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_B85yQB1mEeimfPw4PtkLMw" type="_B46DEB1mEeimfPw4PtkLMw" direction="return"/>
         </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_00EKEBxwEeizssZwUsNBbA" name="getLanguagesNames" visibility="public" method="_00UBsBxwEeizssZwUsNBbA">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_00H0cBxwEeizssZwUsNBbA" type="_eTc3QBhnEeiAzanQIzaG2w" direction="return">
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_00PJMBxwEeizssZwUsNBbA"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_00RlcBxwEeizssZwUsNBbA" value="*"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_B8_44B1mEeimfPw4PtkLMw" name="setAdresseWebInf" visibility="public" method="_B9DjQB1mEeimfPw4PtkLMw">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_B9BuEB1mEeimfPw4PtkLMw" name="adresseWebInf" type="_eTc3QBhnEeiAzanQIzaG2w"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_B9FYcB1mEeimfPw4PtkLMw" name="getLanguagesNames" visibility="public" method="_B9K4AB1mEeimfPw4PtkLMw">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_B9HNoB1mEeimfPw4PtkLMw" type="_eTc3QBhnEeiAzanQIzaG2w" direction="return">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_B9IbwB1mEeimfPw4PtkLMw"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_B9Jp4B1mEeimfPw4PtkLMw" value="*"/>
           </ownedParameter>
         </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_00b9gBxwEeizssZwUsNBbA" name="getLanguages" visibility="public" method="_00lugBxwEeizssZwUsNBbA">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_00fn4BxwEeizssZwUsNBbA" type="_-gOewBh9Eeiw1LOe9PSYiA" direction="return"/>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_00irMBxwEeizssZwUsNBbA" name="languagesNames" type="_eTc3QBhnEeiAzanQIzaG2w"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_B9NUQB1mEeimfPw4PtkLMw" name="getLanguages" visibility="public" method="_B9XFQB1mEeimfPw4PtkLMw">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_B9UB8B1mEeimfPw4PtkLMw" type="_B9OiYB1mEeimfPw4PtkLMw" direction="return"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_B9VQEB1mEeimfPw4PtkLMw" name="languagesNames" type="_eTc3QBhnEeiAzanQIzaG2w"/>
         </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_00scMBxwEeizssZwUsNBbA" name="getSubtitlesNames" visibility="public" method="_00yi0BxwEeizssZwUsNBbA">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_00uRYBxwEeizssZwUsNBbA" type="_eTc3QBhnEeiAzanQIzaG2w" direction="return">
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_00vfgBxwEeizssZwUsNBbA"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_00wtoBxwEeizssZwUsNBbA" value="*"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_B9Y6cB1mEeimfPw4PtkLMw" name="getSubtitlesNames" visibility="public" method="_B9dy8B1mEeimfPw4PtkLMw">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_B9aIkB1mEeimfPw4PtkLMw" type="_eTc3QBhnEeiAzanQIzaG2w" direction="return">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_B9b9wB1mEeimfPw4PtkLMw"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_B9ck0B1mEeimfPw4PtkLMw" value="*"/>
           </ownedParameter>
         </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_001mIBxwEeizssZwUsNBbA" name="getSubtitlesOriginalsNames" visibility="public" method="_005QgBxwEeizssZwUsNBbA">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_0020QBxwEeizssZwUsNBbA" type="_eTc3QBhnEeiAzanQIzaG2w" direction="return">
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_003bUBxwEeizssZwUsNBbA"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_004CYBxwEeizssZwUsNBbA" value="*"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_B9eaAB1mEeimfPw4PtkLMw" name="getSubtitlesOriginalsNames" visibility="public" method="_B9iEYB1mEeimfPw4PtkLMw">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_B9foIB1mEeimfPw4PtkLMw" type="_eTc3QBhnEeiAzanQIzaG2w" direction="return">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_B9g2QB1mEeimfPw4PtkLMw"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_B9g2QR1mEeimfPw4PtkLMw" value="*"/>
           </ownedParameter>
         </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_006eoBxwEeizssZwUsNBbA" name="getSubtitles" visibility="private" method="_01BMURxwEeizssZwUsNBbA">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_007FsBxwEeizssZwUsNBbA" type="_ymjQYBfgEeixr9hZDQbSEg" direction="return"/>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_00864BxwEeizssZwUsNBbA" name="title" type="_eTc3QBhnEeiAzanQIzaG2w"/>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_01BMUBxwEeizssZwUsNBbA" name="language" type="_eTc3QBhnEeiAzanQIzaG2w"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_B9j5kB1mEeimfPw4PtkLMw" name="getSubtitles" visibility="private" method="_B9oLAB1mEeimfPw4PtkLMw">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_B9lHsB1mEeimfPw4PtkLMw" type="_B5FCMB1mEeimfPw4PtkLMw" direction="return"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_B9mV0B1mEeimfPw4PtkLMw" name="title" type="_eTc3QBhnEeiAzanQIzaG2w"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_B9m84B1mEeimfPw4PtkLMw" name="language" type="_eTc3QBhnEeiAzanQIzaG2w"/>
         </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_01CacBxwEeizssZwUsNBbA" name="setSubtitlesOriginal" visibility="public" method="_01EPoBxwEeizssZwUsNBbA">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_01DBgBxwEeizssZwUsNBbA" name="title" type="_eTc3QBhnEeiAzanQIzaG2w"/>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_01DokBxwEeizssZwUsNBbA" name="language" type="_eTc3QBhnEeiAzanQIzaG2w"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_B9rOUB1mEeimfPw4PtkLMw" name="setSubtitlesOriginal" visibility="public" method="_B9vfwB1mEeimfPw4PtkLMw">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_B9tDgB1mEeimfPw4PtkLMw" name="title" type="_eTc3QBhnEeiAzanQIzaG2w"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_B9uRoB1mEeimfPw4PtkLMw" name="language" type="_eTc3QBhnEeiAzanQIzaG2w"/>
         </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_01E2sBxwEeizssZwUsNBbA" name="setSubtitlesDestination" visibility="public" method="_01Gr4BxwEeizssZwUsNBbA">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_01E2sRxwEeizssZwUsNBbA" name="title" type="_eTc3QBhnEeiAzanQIzaG2w"/>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_01FdwBxwEeizssZwUsNBbA" name="language" type="_eTc3QBhnEeiAzanQIzaG2w"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_B9zKIB1mEeimfPw4PtkLMw" name="setSubtitlesDestination" visibility="public" method="_B94CoB1mEeimfPw4PtkLMw">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_B90_UB1mEeimfPw4PtkLMw" name="title" type="_eTc3QBhnEeiAzanQIzaG2w"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_B92NcB1mEeimfPw4PtkLMw" name="language" type="_eTc3QBhnEeiAzanQIzaG2w"/>
         </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_01IhEBxwEeizssZwUsNBbA" name="getSubtitlesOriginal" visibility="public" method="_01JvMBxwEeizssZwUsNBbA">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_01JIIBxwEeizssZwUsNBbA" type="_ymjQYBfgEeixr9hZDQbSEg" direction="return"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_B9530B1mEeimfPw4PtkLMw" name="getSubtitlesOriginal" visibility="public" method="_B98UEB1mEeimfPw4PtkLMw">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_B97F8B1mEeimfPw4PtkLMw" type="_B5FCMB1mEeimfPw4PtkLMw" direction="return"/>
         </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_01KWQBxwEeizssZwUsNBbA" name="getsubtitlesDestination" visibility="public" method="_01LkYRxwEeizssZwUsNBbA">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_01LkYBxwEeizssZwUsNBbA" type="_ymjQYBfgEeixr9hZDQbSEg" direction="return"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_B9-JQB1mEeimfPw4PtkLMw" name="getsubtitlesDestination" visibility="public" method="_B-BMkB1mEeimfPw4PtkLMw">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_B9_-cB1mEeimfPw4PtkLMw" type="_B5FCMB1mEeimfPw4PtkLMw" direction="return"/>
         </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_01MygBxwEeizssZwUsNBbA" name="setError" visibility="public" method="_01OAoBxwEeizssZwUsNBbA">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_01NZkBxwEeizssZwUsNBbA" name="message" type="_eTc3QBhnEeiAzanQIzaG2w"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_B-Do0B1mEeimfPw4PtkLMw" name="setSubtitlesDestination" visibility="public" method="_B-GsIB1mEeimfPw4PtkLMw">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_B-E28B1mEeimfPw4PtkLMw" name="subtitlesDest" type="_B5FCMB1mEeimfPw4PtkLMw"/>
         </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_01OnsBxwEeizssZwUsNBbA" name="getError" visibility="public" method="_01Qc4BxwEeizssZwUsNBbA">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_01POwBxwEeizssZwUsNBbA" type="_eTc3QBhnEeiAzanQIzaG2w" direction="return"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_B-JvcB1mEeimfPw4PtkLMw" name="createSRT" visibility="public" method="_B-On8B1mEeimfPw4PtkLMw">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_B-LkoB1mEeimfPw4PtkLMw" name="title" type="_eTc3QBhnEeiAzanQIzaG2w"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_B-MywB1mEeimfPw4PtkLMw" name="language" type="_eTc3QBhnEeiAzanQIzaG2w"/>
         </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_01UHQBxwEeizssZwUsNBbA" name="setSubtitlesDestination" visibility="public" method="_01VVYBxwEeizssZwUsNBbA">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_01UuUBxwEeizssZwUsNBbA" name="subtitlesDest" type="_ymjQYBfgEeixr9hZDQbSEg"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_B-QdIB1mEeimfPw4PtkLMw" name="setError" visibility="public" method="_B-SSUB1mEeimfPw4PtkLMw">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_B-RrQB1mEeimfPw4PtkLMw" name="message" type="_eTc3QBhnEeiAzanQIzaG2w"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_B-UHgB1mEeimfPw4PtkLMw" name="getError" visibility="public" method="_B-V8sB1mEeimfPw4PtkLMw">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_B-UukB1mEeimfPw4PtkLMw" type="_eTc3QBhnEeiAzanQIzaG2w" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_B-a1MB1mEeimfPw4PtkLMw" name="save" visibility="public" method="_B-hi4B1mEeimfPw4PtkLMw" raisedException="_eT2f4BhnEeiAzanQIzaG2w">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_B-cDUB1mEeimfPw4PtkLMw" name="part" type="_B-XK0B1mEeimfPw4PtkLMw"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_B-efkB1mEeimfPw4PtkLMw" name="title" type="_eTc3QBhnEeiAzanQIzaG2w"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_B-ftsB1mEeimfPw4PtkLMw" name="languageName" type="_eTc3QBhnEeiAzanQIzaG2w"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_B-jYEB1mEeimfPw4PtkLMw" name="ecrireFichier" visibility="private" method="_B-qFwB1mEeimfPw4PtkLMw" raisedException="_eT2f4BhnEeiAzanQIzaG2w">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_B-lNQB1mEeimfPw4PtkLMw" name="part" type="_B-XK0B1mEeimfPw4PtkLMw"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_B-mbYB1mEeimfPw4PtkLMw" name="nomFichier" type="_eTc3QBhnEeiAzanQIzaG2w"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_B-o3oB1mEeimfPw4PtkLMw" name="chemin" type="_eTc3QBhnEeiAzanQIzaG2w"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_B-siAB1mEeimfPw4PtkLMw" name="getNomFichier" visibility="private" isStatic="true" method="_B-wMYB1mEeimfPw4PtkLMw">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_B-twIB1mEeimfPw4PtkLMw" type="_eTc3QBhnEeiAzanQIzaG2w" direction="return"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_B-u-QB1mEeimfPw4PtkLMw" name="part" type="_B-XK0B1mEeimfPw4PtkLMw"/>
         </ownedOperation>
       </packagedElement>
     </packagedElement>
-    <packagedElement xmi:type="uml:Package" xmi:id="_RJYpsBhnEeiAzanQIzaG2w" name="servlet">
-      <packagedElement xmi:type="uml:Class" xmi:id="_DkPCoBhnEeiAzanQIzaG2w" name="Index">
-        <generalization xmi:type="uml:Generalization" xmi:id="_eTNmsBhnEeiAzanQIzaG2w" general="_eS-9MBhnEeiAzanQIzaG2w"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_RJYpsBhnEeiAzanQIzaG2w" name="servlets">
+      <packagedElement xmi:type="uml:Class" xmi:id="_RZwh0B1mEeimfPw4PtkLMw" name="DownloadSRT" visibility="public">
+        <generalization xmi:type="uml:Generalization" xmi:id="_RZxv8B1mEeimfPw4PtkLMw" general="_eS-9MBhnEeiAzanQIzaG2w"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_RZy-EB1mEeimfPw4PtkLMw" name="serialVersionUID" visibility="private" isLeaf="true" isStatic="true" isUnique="false">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_8heigBydEduyofBvg4RL2w"/>
+          <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_RZ0MMB1mEeimfPw4PtkLMw" name="defaultValue">
+            <language>JAVA</language>
+            <body>1L</body>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_RZ9WIB1mEeimfPw4PtkLMw" name="model" visibility="private" type="_RZ2ocB1mEeimfPw4PtkLMw" isUnique="false">
+          <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_RZ-kQB1mEeimfPw4PtkLMw" name="defaultValue">
+            <language>JAVA</language>
+            <body>Model.getInstance()</body>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_RaED0B1mEeimfPw4PtkLMw" name="DownloadSRT" specification="_RZ_LUB1mEeimfPw4PtkLMw">
+          <language>JAVA</language>
+          <body>&#xD;
+    super();&#xD;
+</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_RaLYkB1mEeimfPw4PtkLMw" name="doGet" specification="_RaGgEB1mEeimfPw4PtkLMw">
+          <language>JAVA</language>
+          <body>&#xD;
+    request.setCharacterEncoding(&quot;UTF-8&quot;);&#xD;
+    response.setCharacterEncoding(&quot;UTF-8&quot;);&#xD;
+</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_RaUigB1mEeimfPw4PtkLMw" name="doPost" specification="_RaPC8B1mEeimfPw4PtkLMw">
+          <language>JAVA</language>
+          <body>&#xD;
+    request.setCharacterEncoding(&quot;UTF-8&quot;);&#xD;
+    response.setCharacterEncoding(&quot;UTF-8&quot;);&#xD;
+    String fileName = request.getParameter(&quot;subtitlesNames&quot;);&#xD;
+    String name = fileName.substring(0, fileName.length() - 3);&#xD;
+    String language = fileName.substring(fileName.length() - 2, fileName.length());&#xD;
+    ServletContext context = getServletContext();&#xD;
+    String adresse = context.getRealPath(&quot;/WEB-INF/&quot;);&#xD;
+    model.setAdresseWebInf(adresse);&#xD;
+    model.createSRT(name, language);&#xD;
+    adresse += &quot;SRT/&quot;;&#xD;
+    fileName += &quot;.srt&quot;;&#xD;
+    request.setAttribute(&quot;adresse&quot;, adresse);&#xD;
+    request.setAttribute(&quot;fileName&quot;, fileName);&#xD;
+    response.setContentType(&quot;application/download&quot;);&#xD;
+    response.setHeader(&quot;Content-Disposition&quot;, &quot;attachment;filename=\&quot;&quot; + fileName + &quot;\&quot;&quot;);&#xD;
+    ServletOutputStream out = response.getOutputStream();&#xD;
+    File file = null;&#xD;
+    BufferedInputStream from = null;&#xD;
+    try {&#xD;
+        file = new File(adresse + &quot;/&quot; + fileName);&#xD;
+        response.setContentLength((int) file.length());&#xD;
+        int bufferSize = 64 * 1024;&#xD;
+        from = new BufferedInputStream(new FileInputStream(file), bufferSize * 2);&#xD;
+        byte[] bufferFile = new byte[bufferSize];&#xD;
+        for (@SuppressWarnings(&quot;unused&quot;) int i = 0; ; i++) {&#xD;
+            int len = from.read(bufferFile);&#xD;
+            if (len &lt; 0) {&#xD;
+                break;&#xD;
+            }&#xD;
+            out.write(bufferFile, 0, len);&#xD;
+        }&#xD;
+        out.flush();&#xD;
+    } catch (FileNotFoundException e) {&#xD;
+        model.setError(&quot;Erreur du téléchargement du fichier&quot;);&#xD;
+        e.printStackTrace();&#xD;
+    } catch (IOException e) {&#xD;
+        model.setError(&quot;Erreur du téléchargement du fichier&quot;);&#xD;
+        e.printStackTrace();&#xD;
+    } finally {&#xD;
+        if (from != null) {&#xD;
+            try {&#xD;
+                from.close();&#xD;
+            } catch (Exception e) {&#xD;
+                e.printStackTrace();&#xD;
+            }&#xD;
+        }&#xD;
+        if (out != null) {&#xD;
+            try {&#xD;
+                out.close();&#xD;
+            } catch (Exception e) {&#xD;
+                e.printStackTrace();&#xD;
+            }&#xD;
+        }&#xD;
+        if (file != null) {&#xD;
+            try {&#xD;
+                file.delete();&#xD;
+            } catch (Exception e) {&#xD;
+                e.printStackTrace();&#xD;
+            }&#xD;
+        }&#xD;
+    }&#xD;
+</body>
+        </ownedBehavior>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_RZ_LUB1mEeimfPw4PtkLMw" name="DownloadSRT" visibility="public" method="_RaED0B1mEeimfPw4PtkLMw"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_RaGgEB1mEeimfPw4PtkLMw" name="doGet" visibility="protected" method="_RaLYkB1mEeimfPw4PtkLMw" raisedException="_eTxnYBhnEeiAzanQIzaG2w _eT2f4BhnEeiAzanQIzaG2w">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_RaHuMB1mEeimfPw4PtkLMw" name="request" type="_eTmoQBhnEeiAzanQIzaG2w"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_RaI8UB1mEeimfPw4PtkLMw" name="response" type="_eTq5sBhnEeiAzanQIzaG2w"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_RaPC8B1mEeimfPw4PtkLMw" name="doPost" visibility="protected" method="_RaUigB1mEeimfPw4PtkLMw" raisedException="_eTxnYBhnEeiAzanQIzaG2w _eT2f4BhnEeiAzanQIzaG2w">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_RaQ4IB1mEeimfPw4PtkLMw" name="request" type="_eTmoQBhnEeiAzanQIzaG2w"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_RaSGQB1mEeimfPw4PtkLMw" name="response" type="_eTq5sBhnEeiAzanQIzaG2w"/>
+        </ownedOperation>
       </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_ukW9IBhrEeiAzanQIzaG2w" name="EditSubtitle">
-        <generalization xmi:type="uml:Generalization" xmi:id="_zTHyUBhrEeiAzanQIzaG2w" general="_eS-9MBhnEeiAzanQIzaG2w"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_dS-LgB1mEeimfPw4PtkLMw" name="Index" visibility="public">
+        <generalization xmi:type="uml:Generalization" xmi:id="_dS-ykB1mEeimfPw4PtkLMw" general="_eS-9MBhnEeiAzanQIzaG2w"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_dS_ZoB1mEeimfPw4PtkLMw" name="serialVersionUID" visibility="private" isLeaf="true" isStatic="true" isUnique="false">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_8heigBydEduyofBvg4RL2w"/>
+          <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_dS_ZoR1mEeimfPw4PtkLMw" name="defaultValue">
+            <language>JAVA</language>
+            <body>1L</body>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_dTAAsB1mEeimfPw4PtkLMw" name="model" visibility="private" type="_RZ2ocB1mEeimfPw4PtkLMw" isUnique="false">
+          <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_dTAAsR1mEeimfPw4PtkLMw" name="defaultValue">
+            <language>JAVA</language>
+            <body>Model.getInstance()</body>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_dTESIB1mEeimfPw4PtkLMw" name="Index" specification="_dTAnwB1mEeimfPw4PtkLMw">
+          <language>JAVA</language>
+          <body>&#xD;
+    super();&#xD;
+</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_dTLm4B1mEeimfPw4PtkLMw" name="doGet" specification="_dTGuYB1mEeimfPw4PtkLMw">
+          <language>JAVA</language>
+          <body>&#xD;
+    request.setCharacterEncoding(&quot;UTF-8&quot;);&#xD;
+    response.setCharacterEncoding(&quot;UTF-8&quot;);&#xD;
+    String adresse = getServletContext().getRealPath(&quot;/WEB-INF/&quot;);&#xD;
+    model.setAdresseWebInf(adresse);&#xD;
+    String[] languagesNames = model.getLanguagesNames();&#xD;
+    request.setAttribute(&quot;languagesNames&quot;, languagesNames);&#xD;
+    String[] subtitlesOriginalsNames = model.getSubtitlesOriginalsNames();&#xD;
+    request.setAttribute(&quot;subtitlesOriginalsNames&quot;, subtitlesOriginalsNames);&#xD;
+    String[] subtitlesNames = model.getSubtitlesNames();&#xD;
+    request.setAttribute(&quot;subtitlesNames&quot;, subtitlesNames);&#xD;
+    String error = model.getError();&#xD;
+    request.setAttribute(&quot;error&quot;, error);&#xD;
+    this.getServletContext().getRequestDispatcher(&quot;/WEB-INF/index.jsp&quot;).forward(request, response);&#xD;
+</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_dTRGcB1mEeimfPw4PtkLMw" name="doPost" specification="_dTODIB1mEeimfPw4PtkLMw">
+          <language>JAVA</language>
+          <body>&#xD;
+    request.setCharacterEncoding(&quot;UTF-8&quot;);&#xD;
+    response.setCharacterEncoding(&quot;UTF-8&quot;);&#xD;
+    String title = request.getParameter(&quot;title&quot;);&#xD;
+    String languageName = request.getParameter(&quot;languageName&quot;);&#xD;
+    Part part = request.getPart(&quot;fichier&quot;);&#xD;
+    model.save(part, title, languageName);&#xD;
+    String error = model.getError();&#xD;
+    request.setAttribute(&quot;error&quot;, error);&#xD;
+    this.doGet(request, response);&#xD;
+</body>
+        </ownedBehavior>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_dTAnwB1mEeimfPw4PtkLMw" name="Index" visibility="public" method="_dTESIB1mEeimfPw4PtkLMw"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_dTGuYB1mEeimfPw4PtkLMw" name="doGet" visibility="protected" method="_dTLm4B1mEeimfPw4PtkLMw" raisedException="_eTxnYBhnEeiAzanQIzaG2w _eT2f4BhnEeiAzanQIzaG2w">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_dTH8gB1mEeimfPw4PtkLMw" name="request" type="_eTmoQBhnEeiAzanQIzaG2w"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_dTJKoB1mEeimfPw4PtkLMw" name="response" type="_eTq5sBhnEeiAzanQIzaG2w"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_dTODIB1mEeimfPw4PtkLMw" name="doPost" visibility="protected" method="_dTRGcB1mEeimfPw4PtkLMw" raisedException="_eTxnYBhnEeiAzanQIzaG2w _eT2f4BhnEeiAzanQIzaG2w">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_dTOqMB1mEeimfPw4PtkLMw" name="request" type="_eTmoQBhnEeiAzanQIzaG2w"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_dTPRQB1mEeimfPw4PtkLMw" name="response" type="_eTq5sBhnEeiAzanQIzaG2w"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_g3CIIB1mEeimfPw4PtkLMw" name="EditSubtitle" visibility="public">
+        <generalization xmi:type="uml:Generalization" xmi:id="_g3D9UB1mEeimfPw4PtkLMw" general="_eS-9MBhnEeiAzanQIzaG2w"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_g3D9UR1mEeimfPw4PtkLMw" name="serialVersionUID" visibility="private" isLeaf="true" isStatic="true" isUnique="false">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_8heigBydEduyofBvg4RL2w"/>
+          <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_g3D9Uh1mEeimfPw4PtkLMw" name="defaultValue">
+            <language>JAVA</language>
+            <body>1L</body>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_g3EkYB1mEeimfPw4PtkLMw" name="model" visibility="private" type="_RZ2ocB1mEeimfPw4PtkLMw" isUnique="false">
+          <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_g3EkYR1mEeimfPw4PtkLMw" name="defaultValue">
+            <language>JAVA</language>
+            <body>Model.getInstance()</body>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_g3I10B1mEeimfPw4PtkLMw" name="EditSubtitle" specification="_g3FLcB1mEeimfPw4PtkLMw">
+          <language>JAVA</language>
+          <body>&#xD;
+    super();&#xD;
+</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_g3NHQB1mEeimfPw4PtkLMw" name="doGet" specification="_g3Jc4B1mEeimfPw4PtkLMw">
+          <language>JAVA</language>
+          <body>&#xD;
+    request.setCharacterEncoding(&quot;UTF-8&quot;);&#xD;
+    response.setCharacterEncoding(&quot;UTF-8&quot;);&#xD;
+    String subtitlesNames = request.getParameter(&quot;subtitlesOriginalsNames&quot;);&#xD;
+    String name = subtitlesNames.substring(0, subtitlesNames.length() - 3);&#xD;
+    String language = subtitlesNames.substring(subtitlesNames.length() - 2, subtitlesNames.length());&#xD;
+    model.setSubtitlesOriginal(name, language);&#xD;
+    String languageNamesDest = request.getParameter(&quot;languagesNameDest&quot;);&#xD;
+    model.setSubtitlesDestination(name, languageNamesDest);&#xD;
+    Subtitles subtitlesOr = model.getSubtitlesOriginal();&#xD;
+    List&lt;SubtitleLine> subTitleLinesOr = subtitlesOr.getsubTitleLines();&#xD;
+    String[][] original = new String[subTitleLinesOr.size()][4];&#xD;
+    int i = 0;&#xD;
+    for (SubtitleLine subtitleLine : subTitleLinesOr) {&#xD;
+        original[i] = affiche(subtitleLine);&#xD;
+        i++;&#xD;
+    }&#xD;
+    request.setAttribute(&quot;original&quot;, original);&#xD;
+    Subtitles subtitlesDest = model.getsubtitlesDestination();&#xD;
+    List&lt;SubtitleLine> subTitleLinesDest = subtitlesDest.getsubTitleLines();&#xD;
+    String[][] destination = new String[subTitleLinesDest.size()][4];&#xD;
+    i = 0;&#xD;
+    for (SubtitleLine subtitleLine : subTitleLinesDest) {&#xD;
+        destination[i] = affiche(subtitleLine);&#xD;
+        i++;&#xD;
+    }&#xD;
+    request.setAttribute(&quot;destination&quot;, destination);&#xD;
+    String error = model.getError();&#xD;
+    request.setAttribute(&quot;error&quot;, error);&#xD;
+    this.getServletContext().getRequestDispatcher(&quot;/WEB-INF/editSubtitle.jsp&quot;).forward(request, response);&#xD;
+</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_g3PjgB1mEeimfPw4PtkLMw" name="doPost" specification="_g3NuUB1mEeimfPw4PtkLMw">
+          <language>JAVA</language>
+          <body>&#xD;
+    request.setCharacterEncoding(&quot;UTF-8&quot;);&#xD;
+    response.setCharacterEncoding(&quot;UTF-8&quot;);&#xD;
+    Subtitles subtitlesDest = model.getsubtitlesDestination();&#xD;
+    List&lt;SubtitleLine> subTitleLines = subtitlesDest.getsubTitleLines();&#xD;
+    for (SubtitleLine subtitleLine : subTitleLines) {&#xD;
+        int j = (subtitleLine.getId() - 1);&#xD;
+        subtitleLine.setLine1(request.getParameter(&quot;line1-&quot; + j));&#xD;
+        subtitleLine.setLine2(request.getParameter(&quot;line2-&quot; + j));&#xD;
+    }&#xD;
+    subtitlesDest.setsubTitleLines(subTitleLines);&#xD;
+    model.setSubtitlesDestination(subtitlesDest);&#xD;
+    Subtitles subtitlesOr = model.getSubtitlesOriginal();&#xD;
+    List&lt;SubtitleLine> subTitleLinesOr = subtitlesOr.getsubTitleLines();&#xD;
+    String[][] original = new String[subTitleLinesOr.size()][4];&#xD;
+    int i = 0;&#xD;
+    for (SubtitleLine subtitleLine : subTitleLinesOr) {&#xD;
+        original[i] = affiche(subtitleLine);&#xD;
+        i++;&#xD;
+    }&#xD;
+    request.setAttribute(&quot;original&quot;, original);&#xD;
+    subtitlesDest = model.getsubtitlesDestination();&#xD;
+    List&lt;SubtitleLine> subTitleLinesDest = subtitlesDest.getsubTitleLines();&#xD;
+    String[][] destination = new String[subTitleLinesDest.size()][4];&#xD;
+    i = 0;&#xD;
+    for (SubtitleLine subtitleLine : subTitleLinesDest) {&#xD;
+        destination[i] = affiche(subtitleLine);&#xD;
+        i++;&#xD;
+    }&#xD;
+    request.setAttribute(&quot;destination&quot;, destination);&#xD;
+    String error = model.getError();&#xD;
+    request.setAttribute(&quot;error&quot;, error);&#xD;
+    this.getServletContext().getRequestDispatcher(&quot;/WEB-INF/editSubtitle.jsp&quot;).forward(request, response);&#xD;
+</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_g3T08R1mEeimfPw4PtkLMw" name="affiche" specification="_g3Sm0R1mEeimfPw4PtkLMw">
+          <language>JAVA</language>
+          <body>&#xD;
+    String[] tab = new String[4];&#xD;
+    tab[0] = &quot;&quot; + subLine.getId();&#xD;
+    tab[1] = subLine.gettStart() + &quot; --> &quot; + subLine.gettEnd();&#xD;
+    tab[2] = subLine.getLine1();&#xD;
+    tab[3] = subLine.getLine2();&#xD;
+    return tab;&#xD;
+</body>
+        </ownedBehavior>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_g3FLcB1mEeimfPw4PtkLMw" name="EditSubtitle" visibility="public" method="_g3I10B1mEeimfPw4PtkLMw"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_g3Jc4B1mEeimfPw4PtkLMw" name="doGet" visibility="protected" method="_g3NHQB1mEeimfPw4PtkLMw" raisedException="_eTxnYBhnEeiAzanQIzaG2w _eT2f4BhnEeiAzanQIzaG2w">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_g3KD8B1mEeimfPw4PtkLMw" name="request" type="_eTmoQBhnEeiAzanQIzaG2w"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_g3KrAB1mEeimfPw4PtkLMw" name="response" type="_eTq5sBhnEeiAzanQIzaG2w"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_g3NuUB1mEeimfPw4PtkLMw" name="doPost" visibility="protected" method="_g3PjgB1mEeimfPw4PtkLMw" raisedException="_eTxnYBhnEeiAzanQIzaG2w _eT2f4BhnEeiAzanQIzaG2w">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_g3OVYB1mEeimfPw4PtkLMw" name="request" type="_eTmoQBhnEeiAzanQIzaG2w"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_g3O8cB1mEeimfPw4PtkLMw" name="response" type="_eTq5sBhnEeiAzanQIzaG2w"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_g3Sm0R1mEeimfPw4PtkLMw" name="affiche" visibility="private" method="_g3T08R1mEeimfPw4PtkLMw">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_g3TN4B1mEeimfPw4PtkLMw" type="_eTc3QBhnEeiAzanQIzaG2w" direction="return">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_g3TN4R1mEeimfPw4PtkLMw"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_g3TN4h1mEeimfPw4PtkLMw" value="*"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_g3T08B1mEeimfPw4PtkLMw" name="subLine" type="_g3QKkB1mEeimfPw4PtkLMw"/>
+        </ownedOperation>
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_eS8g8BhnEeiAzanQIzaG2w" name="importedTypes">
@@ -713,8 +1113,19 @@
             <packagedElement xmi:type="uml:Class" xmi:id="_eS-9MBhnEeiAzanQIzaG2w" name="HttpServlet"/>
             <packagedElement xmi:type="uml:Class" xmi:id="_eTmoQBhnEeiAzanQIzaG2w" name="HttpServletRequest"/>
             <packagedElement xmi:type="uml:Class" xmi:id="_eTq5sBhnEeiAzanQIzaG2w" name="HttpServletResponse"/>
+            <packagedElement xmi:type="uml:Class" xmi:id="_B-XK0B1mEeimfPw4PtkLMw" name="Part"/>
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_eTxnYBhnEeiAzanQIzaG2w" name="ServletException"/>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_B5D0EB1mEeimfPw4PtkLMw" name="com">
+        <packagedElement xmi:type="uml:Package" xmi:id="_B5EbIB1mEeimfPw4PtkLMw" name="beans">
+          <packagedElement xmi:type="uml:Class" xmi:id="_B5FCMB1mEeimfPw4PtkLMw" name="Subtitles"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_B9OiYB1mEeimfPw4PtkLMw" name="Language"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_g3QKkB1mEeimfPw4PtkLMw" name="SubtitleLine"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_RZ2BYB1mEeimfPw4PtkLMw" name="model">
+          <packagedElement xmi:type="uml:Class" xmi:id="_RZ2ocB1mEeimfPw4PtkLMw" name="Model"/>
         </packagedElement>
       </packagedElement>
     </packagedElement>
@@ -772,5 +1183,13 @@
   <PapyrusJava:External xmi:id="_NvFcEBuTEeiM_Z9_g55MXg" name="java.sql.SQLException" base_Classifier="_NvBxsBuTEeiM_Z9_g55MXg"/>
   <PapyrusJava:External xmi:id="_d8TRkBuTEeiM_Z9_g55MXg" name="DaoException" base_Classifier="_d8Q1UBuTEeiM_Z9_g55MXg"/>
   <PapyrusJava:External xmi:id="_nyfTkBuTEeiM_Z9_g55MXg" name="Dao" base_Classifier="_nybpMBuTEeiM_Z9_g55MXg"/>
-  <standard:Create xmi:id="_0zjMsBxwEeizssZwUsNBbA" base_BehavioralFeature="_0zQRwBxwEeizssZwUsNBbA"/>
+  <PapyrusJava:External xmi:id="_B8YN0B1mEeimfPw4PtkLMw" name="com.beans.Subtitles" base_Classifier="_B5FCMB1mEeimfPw4PtkLMw"/>
+  <standard:Create xmi:id="_B8x2cB1mEeimfPw4PtkLMw" base_BehavioralFeature="_B8s98B1mEeimfPw4PtkLMw"/>
+  <PapyrusJava:External xmi:id="_B9Sz0B1mEeimfPw4PtkLMw" name="com.beans.Language" base_Classifier="_B9OiYB1mEeimfPw4PtkLMw"/>
+  <PapyrusJava:External xmi:id="_B-ZnEB1mEeimfPw4PtkLMw" name="javax.servlet.http.Part" base_Classifier="_B-XK0B1mEeimfPw4PtkLMw"/>
+  <PapyrusJava:External xmi:id="_RZ8IAB1mEeimfPw4PtkLMw" name="com.model.Model" base_Classifier="_RZ2ocB1mEeimfPw4PtkLMw"/>
+  <standard:Create xmi:id="_RaBnkB1mEeimfPw4PtkLMw" base_BehavioralFeature="_RZ_LUB1mEeimfPw4PtkLMw"/>
+  <standard:Create xmi:id="_dTCc8B1mEeimfPw4PtkLMw" base_BehavioralFeature="_dTAnwB1mEeimfPw4PtkLMw"/>
+  <standard:Create xmi:id="_g3HnsB1mEeimfPw4PtkLMw" base_BehavioralFeature="_g3FLcB1mEeimfPw4PtkLMw"/>
+  <PapyrusJava:External xmi:id="_g3Sm0B1mEeimfPw4PtkLMw" name="com.beans.SubtitleLine" base_Classifier="_g3QKkB1mEeimfPw4PtkLMw"/>
 </xmi:XMI>

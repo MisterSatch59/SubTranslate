@@ -28,10 +28,15 @@ public class DaoSubtitles extends Dao<Subtitles> {
 
 		try {
 			connexion = DaoFactory.getConnection();
-			preparedStatement = connexion.prepareStatement("INSERT INTO subtitles(title, language, idOriginal, sub) VALUES(?, ?, ?, ?);");
+			preparedStatement = connexion.prepareStatement("INSERT INTO subtitles(title, language_abreviation, original_id, sub) VALUES(?, ?, ?, ?);");
 			preparedStatement.setString(1, subtitles.getTitle());
 			preparedStatement.setString(2, subtitles.getLanguage().getAbreviation());
-			preparedStatement.setInt(3, subtitles.getIdOriginal());
+			Integer id = subtitles.getIdOriginal();
+			if (id == null) {
+				preparedStatement.setNull(3,java.sql.Types.INTEGER);
+			}else {
+				preparedStatement.setInt(3, id);
+			}
 			preparedStatement.setString(4, subtitles.toString());
 
 			preparedStatement.executeUpdate();
@@ -42,8 +47,10 @@ public class DaoSubtitles extends Dao<Subtitles> {
 					connexion.rollback();
 				}
 			} catch (SQLException e2) {
+				e2.printStackTrace();
 				throw new DaoException("Impossible de communiquer avec la base de données");
 			}
+			e.printStackTrace();
 			throw new DaoException("Impossible de communiquer avec la base de données");
 		} finally {
 			try {
@@ -51,6 +58,7 @@ public class DaoSubtitles extends Dao<Subtitles> {
 					connexion.close();
 				}
 			} catch (SQLException e) {
+				e.printStackTrace();
 				throw new DaoException("Impossible de communiquer avec la base de données");
 			}
 		}
@@ -74,8 +82,10 @@ public class DaoSubtitles extends Dao<Subtitles> {
 					connexion.rollback();
 				}
 			} catch (SQLException e2) {
+				e2.printStackTrace();
 				throw new DaoException("Impossible de communiquer avec la base de données");
 			}
+			e.printStackTrace();
 			throw new DaoException("Impossible de communiquer avec la base de données");
 		} finally {
 			try {
@@ -83,6 +93,7 @@ public class DaoSubtitles extends Dao<Subtitles> {
 					connexion.close();
 				}
 			} catch (SQLException e) {
+				e.printStackTrace();
 				throw new DaoException("Impossible de communiquer avec la base de données");
 			}
 		}
@@ -94,6 +105,7 @@ public class DaoSubtitles extends Dao<Subtitles> {
 		try {
 			conn = DaoFactory.getConnection();
 		} catch (SQLException e1) {
+			e1.printStackTrace();
 			throw new DaoException("Impossible de communiquer avec la base de données");
 		}
 
@@ -113,10 +125,10 @@ public class DaoSubtitles extends Dao<Subtitles> {
 
 				subtitle.setId(resultat.getInt("id"));
 				subtitle.setTitle(resultat.getString("title"));
-				subtitle.setIdOriginal(resultat.getInt("idOriginal"));
+				subtitle.setIdOriginal(resultat.getInt("original_id"));
 				for (Iterator<Language> iterator = languages.iterator(); iterator.hasNext();) {
 					Language language = (Language) iterator.next();
-					if (language.getAbreviation().equals(resultat.getString("language"))) {
+					if (language.getAbreviation().equals(resultat.getString("language_abreviation"))) {
 						subtitle.setLanguage(language);
 					}
 				}
@@ -145,6 +157,7 @@ public class DaoSubtitles extends Dao<Subtitles> {
 				subtitles.add(subtitle);
 			}
 		} catch (SQLException e) {
+			e.printStackTrace();
 			throw new DaoException("Impossible de communiquer avec la base de données");
 		} finally {
 			try {
@@ -152,6 +165,7 @@ public class DaoSubtitles extends Dao<Subtitles> {
 					conn.close();
 				}
 			} catch (SQLException e) {
+				e.printStackTrace();
 				throw new DaoException("Impossible de communiquer avec la base de données");
 			}
 		}
@@ -166,7 +180,7 @@ public class DaoSubtitles extends Dao<Subtitles> {
 
 		try {
 			connexion = DaoFactory.getConnection();
-			preparedStatement = connexion.prepareStatement("UPDATE subtitles SET title = ?, language = ?, idOriginal = ?, sub = ? WHERE id = ? ;");
+			preparedStatement = connexion.prepareStatement("UPDATE subtitles SET title = ?, language_abreviation = ?, original_id = ?, sub = ? WHERE id = ? ;");
 			preparedStatement.setString(1, subtitles.getTitle());
 			preparedStatement.setString(2, subtitles.getLanguage().getAbreviation());
 			preparedStatement.setInt(3, subtitles.getIdOriginal());
@@ -181,8 +195,10 @@ public class DaoSubtitles extends Dao<Subtitles> {
 					connexion.rollback();
 				}
 			} catch (SQLException e2) {
+				e2.printStackTrace();
 				throw new DaoException("Impossible de communiquer avec la base de données");
 			}
+			e.printStackTrace();
 			throw new DaoException("Impossible de communiquer avec la base de données");
 		} finally {
 			try {
@@ -190,6 +206,7 @@ public class DaoSubtitles extends Dao<Subtitles> {
 					connexion.close();
 				}
 			} catch (SQLException e) {
+				e.printStackTrace();
 				throw new DaoException("Impossible de communiquer avec la base de données");
 			}
 		}

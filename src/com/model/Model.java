@@ -68,7 +68,7 @@ public class Model {
 	 * @param adresseWebInf adresse de WebInf obtenu avec getServletContext().getRealPath("/WEB-INF/") dans la servlet Index
 	 */
 	public void setAdresseWebInf(String adresseWebInf) {
-		this.cheminFichier = adresseWebInf + "SRT/";
+		this.cheminFichier = adresseWebInf;
 	}
 
 	/**
@@ -378,12 +378,16 @@ public class Model {
 		}
 		finally {
 			try {
-				sortie.close();
+				if(sortie!=null)
+					sortie.close();
 			} catch (IOException ignore) {
+				ignore.printStackTrace();
 			}
 			try {
-				entree.close();
+				if(entree!=null)
+					entree.close();
 			} catch (IOException ignore) {
+				ignore.printStackTrace();
 			}
 		}
 	}
