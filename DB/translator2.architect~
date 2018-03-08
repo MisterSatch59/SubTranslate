@@ -63,25 +63,22 @@
   <table id="TAB16" populated="true" UUID="4c28e277-2274-41aa-99f9-ca6b9cc87473" name="subtitle_line" objectType="TABLE" physicalName="subtitle_line" >
    <remarks></remarks>
    <folder id="FOLTAB161" populated="true" name="Columns" physicalName="Columns" type="1">
-    <column id="COL17" populated="true" UUID="eab690e2-10e8-4929-841b-54ccd7e3e143" autoIncrement="false" autoIncrementSequenceName="subtitle_line_id_seq" defaultValue="" name="id" nullable="0" physicalName="id" precision="0" primaryKeySeq="0" referenceCount="2" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL17" populated="true" UUID="9e1ad8c6-e595-469d-86d0-cd648cd1104f" autoIncrement="false" autoIncrementSequenceName="subtitle_line_subtitle_id_seq" defaultValue="" name="subtitle_id" nullable="0" physicalName="subtitle_id" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL18" populated="true" UUID="9e1ad8c6-e595-469d-86d0-cd648cd1104f" autoIncrement="false" autoIncrementSequenceName="subtitle_line_subtitle_id_seq" defaultValue="" name="subtitle_id" nullable="0" physicalName="subtitle_id" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL18" populated="true" UUID="5bc0411b-c943-44f8-a83e-6f870e8573b9" autoIncrement="false" autoIncrementSequenceName="subtitle_line_position_seq" defaultValue="" name="position" nullable="0" physicalName="position" precision="0" primaryKeySeq="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL19" populated="true" UUID="5bc0411b-c943-44f8-a83e-6f870e8573b9" autoIncrement="false" autoIncrementSequenceName="subtitle_line_position_seq" defaultValue="" name="position" nullable="0" physicalName="position" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL19" populated="true" UUID="3f25ad23-9e03-4d6f-a471-35fac8fa2cdb" autoIncrement="false" autoIncrementSequenceName="subtitle_line_start_seq" defaultValue="" name="start" nullable="0" physicalName="start" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="92" userDefinedTypeUUID="10d6960f-169d-47c2-860a-37341342b1d5" >
      <remarks></remarks>
     </column>
-    <column id="COL20" populated="true" UUID="3f25ad23-9e03-4d6f-a471-35fac8fa2cdb" autoIncrement="false" autoIncrementSequenceName="subtitle_line_start_seq" defaultValue="" name="start" nullable="0" physicalName="start" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="92" userDefinedTypeUUID="10d6960f-169d-47c2-860a-37341342b1d5" >
+    <column id="COL20" populated="true" UUID="6b5b9a10-df09-43c7-89cf-418f428bdbb3" autoIncrement="false" autoIncrementSequenceName="subtitle_line_end_seq" defaultValue="" name="end" nullable="0" physicalName="end" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="92" userDefinedTypeUUID="10d6960f-169d-47c2-860a-37341342b1d5" >
      <remarks></remarks>
     </column>
-    <column id="COL21" populated="true" UUID="6b5b9a10-df09-43c7-89cf-418f428bdbb3" autoIncrement="false" autoIncrementSequenceName="subtitle_line_end_seq" defaultValue="" name="end" nullable="0" physicalName="end" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="92" userDefinedTypeUUID="10d6960f-169d-47c2-860a-37341342b1d5" >
+    <column id="COL21" populated="true" UUID="e9ce9f0a-4cec-42d3-bc57-042f2572b147" autoIncrement="false" autoIncrementSequenceName="subtitle_line_line1_seq" defaultValue="" name="line1" nullable="1" physicalName="line1" precision="250" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL22" populated="true" UUID="e9ce9f0a-4cec-42d3-bc57-042f2572b147" autoIncrement="false" autoIncrementSequenceName="subtitle_line_line1_seq" defaultValue="" name="line1" nullable="1" physicalName="line1" precision="250" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
-     <remarks></remarks>
-    </column>
-    <column id="COL23" populated="true" UUID="0c5ae594-d117-48da-983b-12fa35be4830" autoIncrement="false" autoIncrementSequenceName="subtitle_line_line2_seq" defaultValue="" name="line2" nullable="1" physicalName="line2" precision="250" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL22" populated="true" UUID="0c5ae594-d117-48da-983b-12fa35be4830" autoIncrement="false" autoIncrementSequenceName="subtitle_line_line2_seq" defaultValue="" name="line2" nullable="1" physicalName="line2" precision="250" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
     </folder>
@@ -90,8 +87,9 @@
     <folder id="FOLTAB162" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
     </folder>
     <folder id="FOLTAB164" populated="true" name="Indices" physicalName="Indices" type="4">
-    <index id="IDX24" populated="true" UUID="36140615-81ca-435b-868d-3c16898a84d3" clustered="false" name="subtitle_line_pk" physicalName="subtitle_line_pk" primaryKeyIndex="true" unique="false" >
-     <index-column id="IDC25" populated="true" UUID="f6a9ef11-4fcf-46ae-a4a1-98f9afd0f4be" ascendingOrDescending="UNSPECIFIED" column-ref="COL17" name="id" physicalName="id" />
+    <index id="IDX23" populated="true" UUID="36140615-81ca-435b-868d-3c16898a84d3" clustered="false" name="subtitle_line_pk" physicalName="subtitle_line_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC24" populated="true" UUID="44dcebb1-4d42-4d9e-afd2-d42edf4a4094" ascendingOrDescending="UNSPECIFIED" column-ref="COL17" name="subtitle_id" physicalName="subtitle_id" />
+     <index-column id="IDC25" populated="true" UUID="aa40c76f-d0d9-4837-a7e2-e284b95d51c5" ascendingOrDescending="UNSPECIFIED" column-ref="COL18" name="position" physicalName="position" />
     </index>
    </folder>
   </table>
@@ -103,11 +101,11 @@
     <column-mapping id="CMP29" populated="true" UUID="9ee1d672-79ff-4ce1-a656-c148a1d9a2c8" fk-column-ref="COL10" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL7" />
    </relationship>
    <relationship id="REL30" populated="true" UUID="aa6b78f3-c203-4556-9fff-cf7655503b74" deferrability="7" deleteRule="3" fk-table-ref="TAB16" fkCardinality="7" identifying="false" name="subtitle_subtitle_line_fk" physicalName="subtitle_subtitle_line_fk" pk-table-ref="TAB6" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP31" populated="true" UUID="c309d284-3708-4b53-a42e-94e420dc2bc9" fk-column-ref="COL18" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL7" />
+    <column-mapping id="CMP31" populated="true" UUID="c309d284-3708-4b53-a42e-94e420dc2bc9" fk-column-ref="COL17" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL7" />
    </relationship>
   </relationships>
  </target-database>
- <ddl-generator type="ca.sqlpower.architect.ddl.MySqlDDLGenerator" allow-connection="true"> </ddl-generator>
+ <ddl-generator type="ca.sqlpower.architect.ddl.MySqlDDLGenerator" allow-connection="false"> </ddl-generator>
  <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
  <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
  <play-pen zoom="1.0" viewportX="0" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">

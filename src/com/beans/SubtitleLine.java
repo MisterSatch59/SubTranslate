@@ -74,35 +74,18 @@ public class SubtitleLine {
 		DateTimeFormatter f = DateTimeFormatter.ofPattern("HH:mm:ss,SSS");
 		return tStart.format(f);
 	}
-	
-	public LocalTime getStart() {
-		return tStart;
-	}
 
 	public void settStart(String tStart) {
 		this.tStart = LocalTime.parse(tStart,DateTimeFormatter.ofPattern("HH:mm:ss,SSS"));
-	}
-	
-	public void settStart(LocalTime tStart) {
-		this.tStart=tStart;
-		
 	}
 
 	public String gettEnd() {
 		DateTimeFormatter f = DateTimeFormatter.ofPattern("HH:mm:ss,SSS");
 		return tEnd.format(f);
 	}
-	
-	public LocalTime getEnd() {
-		return tEnd;
-	}
 
 	public void settEnd(String tEnd) {
 		this.tEnd = LocalTime.parse(tEnd,DateTimeFormatter.ofPattern("HH:mm:ss,SSS"));
-	}
-	
-	public void settEnd(LocalTime tEnd) {
-		this.tEnd=tEnd;
 	}
 
 	public String getLine1() {

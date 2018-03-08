@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.sql.Time;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -81,8 +80,8 @@ public class DaoSubtitleLine2 extends Dao<SubtitleLine>  {
 			while (resultat.next()) {
 				SubtitleLine sub = new SubtitleLine();
 				sub.setId(resultat.getInt("position"));
-				sub.settStart(resultat.getTime("start").toLocalTime());
-				sub.settEnd(resultat.getTime("end").toLocalTime());
+				sub.settStart(resultat.getString("start"));
+				sub.settEnd(resultat.getString("end"));
 				sub.setLine1(resultat.getString("line1"));
 				sub.setLine2(resultat.getString("line2"));
 				listSubtitleLine.add(sub);
@@ -98,26 +97,28 @@ public class DaoSubtitleLine2 extends Dao<SubtitleLine>  {
 	/**
 	 * Ajoute le subtitleLine à la base de données avec le subtitleId
 	 * @param subtitleId
-	 * @param subtitleLine
+	 * @param subtitleLines
 	 * @throws DaoException
 	 */
-	public void add(int subtitleId,SubtitleLine subtitleLine) throws DaoException {
-		// TODO Auto-generated method stub
+	public void add(int subtitleId,List<SubtitleLine> subtitleLines) throws DaoException {
 		Connection connexion = null;
 		PreparedStatement preparedStatement = null;
 
 		try {
 			connexion = DaoFactory2.getConnection();
+			
 			preparedStatement = connexion.prepareStatement(
 					"INSERT INTO subtitle_line (subtitle_id, position, start, end, line1, line2) VALUES( ?, ?, ?, ?, ?, ?);");
-			preparedStatement.setInt(1, subtitleId);
-			preparedStatement.setInt(2, subtitleLine.getId());
-			preparedStatement.setTime(3, Time.valueOf(subtitleLine.getStart()));
-			preparedStatement.setTime(4, Time.valueOf(subtitleLine.getEnd()));
-			preparedStatement.setString(5, subtitleLine.getLine1());
-			preparedStatement.setString(6, subtitleLine.getLine2());
-			
-			preparedStatement.executeUpdate();
+			for (SubtitleLine subtitleLine : subtitleLines) {
+				preparedStatement.setInt(1, subtitleId);
+				preparedStatement.setInt(2, subtitleLine.getId());
+				preparedStatement.setString(3, subtitleLine.gettStart());
+				preparedStatement.setString(4, subtitleLine.gettEnd());
+				preparedStatement.setString(5, subtitleLine.getLine1());
+				preparedStatement.setString(6, subtitleLine.getLine2());
+				
+				preparedStatement.executeUpdate();
+			}
 			connexion.commit();
 		} catch (SQLException e) {
 			try {
@@ -136,10 +137,10 @@ public class DaoSubtitleLine2 extends Dao<SubtitleLine>  {
 	/**
 	 * Mise à jour de la ligne de soustitre
 	 * @param subtitleId
-	 * @param subtitleLine
+	 * @param listSubtitleLine
 	 * @throws DaoException
 	 */
-	public void update(int subtitleId, SubtitleLine subtitleLine) throws DaoException {
+	public void update(int subtitleId, List<SubtitleLine> listSubtitleLine) throws DaoException {
 		Connection connexion = null;
 		PreparedStatement preparedStatement = null;
 
@@ -147,15 +148,18 @@ public class DaoSubtitleLine2 extends Dao<SubtitleLine>  {
 			connexion = DaoFactory2.getConnection();
 			preparedStatement = connexion.prepareStatement(
 					"UPDATE subtitle_line SET start = ?, end = ?, line1 = ?, line2 = ? WHERE subtitle_id = ? AND position = ? ;");
-			preparedStatement.setTime(1, Time.valueOf(subtitleLine.getStart()));
-			preparedStatement.setTime(2, Time.valueOf(subtitleLine.getEnd()));
-			preparedStatement.setString(3, subtitleLine.getLine1());
-			preparedStatement.setString(4, subtitleLine.getLine2());
-			preparedStatement.setInt(5, subtitleId);
-			preparedStatement.setInt(6, subtitleLine.getId());
 			
-
-			preparedStatement.executeUpdate();
+			for (SubtitleLine subtitleLine : listSubtitleLine) {
+				preparedStatement.setString(1, subtitleLine.gettStart());
+				preparedStatement.setString(2, subtitleLine.gettEnd());
+				preparedStatement.setString(3, subtitleLine.getLine1());
+				preparedStatement.setString(4, subtitleLine.getLine2());
+				preparedStatement.setInt(5, subtitleId);
+				preparedStatement.setInt(6, subtitleLine.getId());
+				
+				preparedStatement.executeUpdate();
+			}
+			
 			connexion.commit();
 		} catch (SQLException e) {
 			try {

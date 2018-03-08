@@ -25,8 +25,8 @@ CREATE UNIQUE INDEX subtitle_idx
 CREATE TABLE subtitle_line (
                 subtitle_id INT NOT NULL,
                 position INT NOT NULL,
-                start TIME(3) NOT NULL,
-                end TIME(3) NOT NULL,
+                start VARCHAR(20) NOT NULL,
+                end VARCHAR(20) NOT NULL,
                 line1 VARCHAR(250),
                 line2 VARCHAR(250),
                 PRIMARY KEY (subtitle_id, position)

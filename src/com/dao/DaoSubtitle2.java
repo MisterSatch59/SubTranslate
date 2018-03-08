@@ -50,9 +50,8 @@ public class DaoSubtitle2 extends Dao<Subtitles> {
 			connexion.commit();
 			
 			List<SubtitleLine> subtitleLines = subtitles.getsubTitleLines();
-			for (SubtitleLine subtitleLine : subtitleLines) {
-				DaoFactory2.getInstance().getDaoSubtitleLine2().add(newid,subtitleLine);
-			}
+			DaoFactory2.getInstance().getDaoSubtitleLine2().add(newid,subtitleLines);
+			
 			
 
 		} catch (SQLException e) {
@@ -158,11 +157,8 @@ public class DaoSubtitle2 extends Dao<Subtitles> {
 			preparedStatement.setInt(4, subtitles.getId());
 
 			List<SubtitleLine> listSubtitleLine = subtitles.getsubTitleLines();
+			DaoFactory2.getInstance().getDaoSubtitleLine2().update(subtitles.getId(),listSubtitleLine);
 			
-			for (SubtitleLine subtitleLine : listSubtitleLine) {
-				DaoFactory2.getInstance().getDaoSubtitleLine2().update(subtitles.getId(),subtitleLine);
-			}
-
 			preparedStatement.executeUpdate();
 			connexion.commit();
 		} catch (SQLException e) {

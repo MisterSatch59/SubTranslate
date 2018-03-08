@@ -69,10 +69,10 @@
     <column id="COL18" populated="true" UUID="5bc0411b-c943-44f8-a83e-6f870e8573b9" autoIncrement="false" autoIncrementSequenceName="subtitle_line_position_seq" defaultValue="" name="position" nullable="0" physicalName="position" precision="0" primaryKeySeq="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL19" populated="true" UUID="3f25ad23-9e03-4d6f-a471-35fac8fa2cdb" autoIncrement="false" autoIncrementSequenceName="subtitle_line_start_seq" defaultValue="" name="start" nullable="0" physicalName="start" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="92" userDefinedTypeUUID="10d6960f-169d-47c2-860a-37341342b1d5" >
+    <column id="COL19" populated="true" UUID="3f25ad23-9e03-4d6f-a471-35fac8fa2cdb" autoIncrement="false" autoIncrementSequenceName="subtitle_line_start_seq" defaultValue="" name="start" nullable="0" physicalName="start" precision="20" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL20" populated="true" UUID="6b5b9a10-df09-43c7-89cf-418f428bdbb3" autoIncrement="false" autoIncrementSequenceName="subtitle_line_end_seq" defaultValue="" name="end" nullable="0" physicalName="end" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="92" userDefinedTypeUUID="10d6960f-169d-47c2-860a-37341342b1d5" >
+    <column id="COL20" populated="true" UUID="6b5b9a10-df09-43c7-89cf-418f428bdbb3" autoIncrement="false" autoIncrementSequenceName="subtitle_line_end_seq" defaultValue="" name="end" nullable="0" physicalName="end" precision="20" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
     <column id="COL21" populated="true" UUID="e9ce9f0a-4cec-42d3-bc57-042f2572b147" autoIncrement="false" autoIncrementSequenceName="subtitle_line_line1_seq" defaultValue="" name="line1" nullable="1" physicalName="line1" precision="250" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
@@ -105,7 +105,7 @@
    </relationship>
   </relationships>
  </target-database>
- <ddl-generator type="ca.sqlpower.architect.ddl.MySqlDDLGenerator" allow-connection="false"> </ddl-generator>
+ <ddl-generator type="ca.sqlpower.architect.ddl.MySqlDDLGenerator" allow-connection="true"> </ddl-generator>
  <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
  <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
  <play-pen zoom="1.0" viewportX="0" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
