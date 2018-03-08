@@ -31,7 +31,7 @@ public class Index extends HttpServlet {
     }
 
 	/**
-	 * Tranmet les éléments nécéssaires de la page d'accueil du modèle vers la vue
+	 * Transmet les éléments nécéssaires de la page d'accueil du modèle vers la vue
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -71,9 +71,6 @@ public class Index extends HttpServlet {
 		Part part = request.getPart("fichier");
 		
 		model.save(part, title, languageName);
-		
-		String error = model.getError();
-		request.setAttribute("error", error);
 		
 		this.doGet(request, response);
 		

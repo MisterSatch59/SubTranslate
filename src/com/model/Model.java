@@ -13,8 +13,8 @@ import javax.servlet.http.Part;
 import com.beans.Language;
 import com.beans.SubtitleLine;
 import com.beans.Subtitles;
+import com.dao.AbstractFactory;
 import com.dao.DaoException;
-import com.dao.DaoFactory;
 import com.file.FileException;
 import com.file.SRTFile;
 
@@ -45,12 +45,17 @@ public class Model {
 	 * instance unique de Model
 	 */
 	private static Model instance = new Model();
+	
+	/**
+	 * instance du DaoFactory utilisé
+	 */
+	private AbstractFactory factory;
 
 	/**
 	 * Constructeur privé
 	 */
 	private Model() {
-		
+		factory = AbstractFactory.getFactory(AbstractFactory.DAOFACTORY2); //Choisir ici la base de données utilisée :AbstractFactory.DAOFACTORY ou AbstractFactory.DAOFACTORY2
 	}
 	/**
 	 * Acces à l'instance unique de Model
@@ -79,7 +84,7 @@ public class Model {
 	public String[] getLanguagesNames() {
 		List<Language> list = null;
 		try {
-			list = DaoFactory.getDaoLanguage().list();
+			list = factory.getDaoLanguages().list();
 		} catch (DaoException e) {
 			setError(e.getMessage());
 			e.printStackTrace();
@@ -102,7 +107,7 @@ public class Model {
 	public Language getLanguages(String languagesNames) {
 		List<Language> list = null;
 		try {
-			list = DaoFactory.getDaoLanguage().list();
+			list = factory.getDaoLanguages().list();
 		} catch (DaoException e) {
 			setError(e.getMessage());
 			e.printStackTrace();
@@ -124,7 +129,7 @@ public class Model {
 	public String[] getSubtitlesNames() {
 		List<Subtitles> list = null;
 		try {
-			list = DaoFactory.getDaoSubtitles().list();
+			list = factory.getDaoSubtitles().list();
 		} catch (DaoException e) {
 			setError(e.getMessage());
 			e.printStackTrace();
@@ -146,7 +151,7 @@ public class Model {
 	public String[] getSubtitlesOriginalsNames() {
 		List<Subtitles> list = null;
 		try {
-			list = DaoFactory.getDaoSubtitles().list();
+			list = factory.getDaoSubtitles().list();
 		} catch (DaoException e) {
 			setError(e.getMessage());
 			e.printStackTrace();
@@ -178,7 +183,7 @@ public class Model {
 	private Subtitles getSubtitles(String title, String language) {
 		List<Subtitles> list = null;
 		try {
-			list = DaoFactory.getDaoSubtitles().list();
+			list = factory.getDaoSubtitles().list();
 		} catch (DaoException e) {
 			setError(e.getMessage());
 			e.printStackTrace();
@@ -235,7 +240,7 @@ public class Model {
 			}
 			this.subtitlesDestination.setsubTitleLines(subtitleLinesDestination);
 			try {
-				DaoFactory.getDaoSubtitles().add(subtitlesDestination);
+				factory.getDaoSubtitles().add(subtitlesDestination);
 			} catch (DaoException e) {
 				setError(e.getMessage());
 				e.printStackTrace();
@@ -271,7 +276,7 @@ public class Model {
 	public void setSubtitlesDestination(Subtitles subtitlesDest) {
 		this.subtitlesDestination = subtitlesDest;
 		try {
-			DaoFactory.getDaoSubtitles().update(this.subtitlesDestination);
+			factory.getDaoSubtitles().update(this.subtitlesDestination);
 		} catch (DaoException e) {
 			this.setError("Erreur lors de l'enregistrement des modifications dans la base de données");
 			e.printStackTrace();
@@ -347,7 +352,7 @@ public class Model {
 			this.setError("Erreur lors du chargement du fichier.");
 		}
 		try {
-			DaoFactory.getDaoSubtitles().add(file);
+			factory.getDaoSubtitles().add(file);
 		} catch (DaoException e) {
 			e.printStackTrace();
 			this.setError("Erreur lors du chargement du fichier.");

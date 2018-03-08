@@ -11,12 +11,12 @@ import com.beans.Language;
 
 /**
  * 
- * Classe Dao permet l'accés à la table languages de la base de données
+ * Classe Dao permet l'accés à la table language de la base de données translator2
  * Seule la lecture (méthode list()) est possible pour cette table
  * @author oltenos
  *
  */
-public class DaoLanguage extends Dao<Language> {
+public class DaoLanguage2 extends Dao<Language> {
 
 	@Override
 	public void add(Language beans)  throws DaoException{
@@ -34,7 +34,7 @@ public class DaoLanguage extends Dao<Language> {
 	public List<Language> list() throws DaoException {
 		Connection conn;
 		try {
-			conn = DaoFactory.getConnection();
+			conn = DaoFactory2.getConnection();
 		} catch (SQLException e1) {
 			e1.printStackTrace();
 			throw new DaoException("Impossible de communiquer avec la base de données");
@@ -46,7 +46,7 @@ public class DaoLanguage extends Dao<Language> {
 
 		try {
 			statement = conn.createStatement();
-			resultat = statement.executeQuery("SELECT * FROM languages;");
+			resultat = statement.executeQuery("SELECT * FROM language;");
 
 			while (resultat.next()) {
 				String abreviation = resultat.getString("abreviation");
@@ -61,16 +61,7 @@ public class DaoLanguage extends Dao<Language> {
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new DaoException("Impossible de communiquer avec la base de données");
-		} finally {
-			try {
-				if (conn != null) {
-					conn.close();
-				}
-			} catch (SQLException e) {
-				e.printStackTrace();
-				throw new DaoException("Impossible de communiquer avec la base de données");
-			}
-		}
+		} 
 		return languages;
 	}
 

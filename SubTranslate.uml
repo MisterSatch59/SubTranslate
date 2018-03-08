@@ -6,6 +6,7 @@
     </packageImport>
     <packagedElement xmi:type="uml:Package" xmi:id="_ib9aMBhmEeiAzanQIzaG2w" name="dao">
       <packagedElement xmi:type="uml:Class" xmi:id="_NpgYgBuTEeiM_Z9_g55MXg" name="DaoFactory" visibility="public">
+        <generalization xmi:type="uml:Generalization" xmi:id="_UdzPECKfEeiGQvXYHwharg" general="_RCMq4CKfEeiGQvXYHwharg"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_Np4L8BuTEeiM_Z9_g55MXg" name="url" visibility="private" isStatic="true" type="_eTc3QBhnEeiAzanQIzaG2w" isUnique="false">
           <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_Np7PQBuTEeiM_Z9_g55MXg" name="defaultValue">
             <language>JAVA</language>
@@ -62,13 +63,13 @@
     return conn;&#xD;
 </body>
         </ownedBehavior>
-        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_NvQbMBuTEeiM_Z9_g55MXg" name="getDaoSubtitles" specification="_NvIfYBuTEeiM_Z9_g55MXg">
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_NvQbMBuTEeiM_Z9_g55MXg" name="getDaoSubtitles">
           <language>JAVA</language>
           <body>&#xD;
     return new DaoSubtitles();&#xD;
 </body>
         </ownedBehavior>
-        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_NvY-EBuTEeiM_Z9_g55MXg" name="getDaoLanguage" specification="_NvRpUBuTEeiM_Z9_g55MXg">
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_NvY-EBuTEeiM_Z9_g55MXg" name="getDaoLanguage">
           <language>JAVA</language>
           <body>&#xD;
     return new DaoLanguage();&#xD;
@@ -80,12 +81,6 @@
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_Nu-HUBuTEeiM_Z9_g55MXg" name="getConnection" visibility="public" isStatic="true" method="_NvHRQBuTEeiM_Z9_g55MXg" raisedException="_NvBxsBuTEeiM_Z9_g55MXg">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_NvAjkBuTEeiM_Z9_g55MXg" type="_zX8vUBrZEeivNpsMtsMdlg" direction="return"/>
-        </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_NvIfYBuTEeiM_Z9_g55MXg" name="getDaoSubtitles" visibility="public" isStatic="true" method="_NvQbMBuTEeiM_Z9_g55MXg">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_NvPNEBuTEeiM_Z9_g55MXg" type="_oexKwBuTEeiM_Z9_g55MXg" direction="return"/>
-        </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_NvRpUBuTEeiM_Z9_g55MXg" name="getDaoLanguage" visibility="public" isStatic="true" method="_NvY-EBuTEeiM_Z9_g55MXg">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_NvXv8BuTEeiM_Z9_g55MXg" type="_nyabEBuTEeiM_Z9_g55MXg" direction="return"/>
         </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_d8OZEBuTEeiM_Z9_g55MXg" name="Dao&lt;T>" visibility="public" isAbstract="true">
@@ -108,7 +103,6 @@
         </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_nyabEBuTEeiM_Z9_g55MXg" name="DaoLanguage" visibility="public">
-        <generalization xmi:type="uml:Generalization" xmi:id="_nyf6oBuTEeiM_Z9_g55MXg" general="_nybpMBuTEeiM_Z9_g55MXg"/>
         <generalization xmi:type="uml:Generalization" xmi:id="_yRN8QBuTEeiM_Z9_g55MXg" general="_d8OZEBuTEeiM_Z9_g55MXg"/>
         <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_nykzIBuTEeiM_Z9_g55MXg" name="add" specification="_nyjlARuTEeiM_Z9_g55MXg">
           <language>JAVA</language>
@@ -184,7 +178,6 @@
         </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_oexKwBuTEeiM_Z9_g55MXg" name="DaoSubtitles" visibility="public">
-        <generalization xmi:type="uml:Generalization" xmi:id="_oeyY4BuTEeiM_Z9_g55MXg" general="_nybpMBuTEeiM_Z9_g55MXg"/>
         <generalization xmi:type="uml:Generalization" xmi:id="_x0EtQBuTEeiM_Z9_g55MXg" general="_d8OZEBuTEeiM_Z9_g55MXg"/>
         <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_oe7i0BuTEeiM_Z9_g55MXg" name="add" specification="_oe4fgBuTEeiM_Z9_g55MXg">
           <language>JAVA</language>
@@ -368,6 +361,547 @@
         </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Dependency" xmi:id="_sHdIsBuTEeiM_Z9_g55MXg" name="create" client="_NpgYgBuTEeiM_Z9_g55MXg" supplier="_d8OZEBuTEeiM_Z9_g55MXg"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_xqZhkCKeEeiGQvXYHwharg" name="DaoLanguage2" visibility="public">
+        <generalization xmi:type="uml:Generalization" xmi:id="_xqeaESKeEeiGQvXYHwharg" general="_xqb90CKeEeiGQvXYHwharg"/>
+        <generalization xmi:type="uml:Generalization" xmi:id="_0EiowCKeEeiGQvXYHwharg" general="_d8OZEBuTEeiM_Z9_g55MXg"/>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_xqfoMSKeEeiGQvXYHwharg" name="add" specification="_xqfBICKeEeiGQvXYHwharg">
+          <language>JAVA</language>
+          <body>&#xD;
+// Rien à faire : impossible d'ajouter une langue&#xD;
+</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_xqgPQiKeEeiGQvXYHwharg" name="delete" specification="_xqgPQCKeEeiGQvXYHwharg">
+          <language>JAVA</language>
+          <body>&#xD;
+// Rien à faire : impossible de supprimer une langue&#xD;
+</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_xqiEcCKeEeiGQvXYHwharg" name="list" specification="_xqg2UCKeEeiGQvXYHwharg">
+          <language>JAVA</language>
+          <body>&#xD;
+    Connection conn;&#xD;
+    try {&#xD;
+        conn = DaoFactory2.getConnection();&#xD;
+    } catch (SQLException e1) {&#xD;
+        e1.printStackTrace();&#xD;
+        throw new DaoException(&quot;Impossible de communiquer avec la base de données&quot;);&#xD;
+    }&#xD;
+    List&lt;Language> languages = new ArrayList&lt;Language>();&#xD;
+    Statement statement = null;&#xD;
+    ResultSet resultat = null;&#xD;
+    try {&#xD;
+        statement = conn.createStatement();&#xD;
+        resultat = statement.executeQuery(&quot;SELECT * FROM language;&quot;);&#xD;
+        while (resultat.next()) {&#xD;
+            String abreviation = resultat.getString(&quot;abreviation&quot;);&#xD;
+            String name = resultat.getString(&quot;name&quot;);&#xD;
+            Language language = new Language();&#xD;
+            language.setAbreviation(abreviation);&#xD;
+            language.setName(name);&#xD;
+            languages.add(language);&#xD;
+        }&#xD;
+    } catch (SQLException e) {&#xD;
+        e.printStackTrace();&#xD;
+        throw new DaoException(&quot;Impossible de communiquer avec la base de données&quot;);&#xD;
+    }&#xD;
+    return languages;&#xD;
+</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_xqirgSKeEeiGQvXYHwharg" name="update" specification="_xqiEcSKeEeiGQvXYHwharg">
+          <language>JAVA</language>
+          <body>&#xD;
+// Rien à faire : impossible de modifier une langue&#xD;
+</body>
+        </ownedBehavior>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_xqfBICKeEeiGQvXYHwharg" name="add" visibility="public" method="_xqfoMSKeEeiGQvXYHwharg" raisedException="_d8Q1UBuTEeiM_Z9_g55MXg">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_xqfoMCKeEeiGQvXYHwharg" name="beans" type="_B9OiYB1mEeimfPw4PtkLMw"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_xqgPQCKeEeiGQvXYHwharg" name="delete" visibility="public" method="_xqgPQiKeEeiGQvXYHwharg" raisedException="_d8Q1UBuTEeiM_Z9_g55MXg">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_xqgPQSKeEeiGQvXYHwharg" name="id">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_xqg2UCKeEeiGQvXYHwharg" name="list" visibility="public" method="_xqiEcCKeEeiGQvXYHwharg" raisedException="_d8Q1UBuTEeiM_Z9_g55MXg">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_xqg2USKeEeiGQvXYHwharg" type="_B9OiYB1mEeimfPw4PtkLMw" direction="return">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xqhdYCKeEeiGQvXYHwharg"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xqhdYSKeEeiGQvXYHwharg" value="*"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_xqiEcSKeEeiGQvXYHwharg" name="update" visibility="public" method="_xqirgSKeEeiGQvXYHwharg" raisedException="_d8Q1UBuTEeiM_Z9_g55MXg">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_xqirgCKeEeiGQvXYHwharg" name="bean" type="_B9OiYB1mEeimfPw4PtkLMw"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_1S7ugCKeEeiGQvXYHwharg" name="DaoSubtitle2" visibility="public">
+        <generalization xmi:type="uml:Generalization" xmi:id="_1S-x0CKeEeiGQvXYHwharg" general="_xqb90CKeEeiGQvXYHwharg"/>
+        <generalization xmi:type="uml:Generalization" xmi:id="_2BCKoCKeEeiGQvXYHwharg" general="_d8OZEBuTEeiM_Z9_g55MXg"/>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_1TGGkCKeEeiGQvXYHwharg" name="add" specification="_1TB1ICKeEeiGQvXYHwharg">
+          <language>JAVA</language>
+          <body>&#xD;
+    Connection connexion = null;&#xD;
+    PreparedStatement preparedStatement = null;&#xD;
+    try {&#xD;
+        connexion = DaoFactory2.getConnection();&#xD;
+        preparedStatement = connexion.prepareStatement(&quot;INSERT INTO subtitle (title, language_abreviation, original_id) VALUES(?, ?, ?);&quot;, Statement.RETURN_GENERATED_KEYS);&#xD;
+        preparedStatement.setString(1, subtitles.getTitle());&#xD;
+        preparedStatement.setString(2, subtitles.getLanguage().getAbreviation());&#xD;
+        Integer idOriginal = subtitles.getIdOriginal();&#xD;
+        if (idOriginal == null) {&#xD;
+            preparedStatement.setNull(3, java.sql.Types.INTEGER);&#xD;
+        } else {&#xD;
+            preparedStatement.setInt(3, idOriginal);&#xD;
+        }&#xD;
+        preparedStatement.executeUpdate();&#xD;
+        ResultSet resultSet = preparedStatement.getGeneratedKeys();&#xD;
+        int newid = 0;&#xD;
+        if (resultSet != null &amp;&amp; resultSet.next()) {&#xD;
+            newid = resultSet.getInt(1);&#xD;
+        }&#xD;
+        connexion.commit();&#xD;
+        List&lt;SubtitleLine> subtitleLines = subtitles.getsubTitleLines();&#xD;
+        for (SubtitleLine subtitleLine : subtitleLines) {&#xD;
+            DaoFactory2.getInstance().getDaoSubtitleLine2().add(newid, subtitleLine);&#xD;
+        }&#xD;
+    } catch (SQLException e) {&#xD;
+        try {&#xD;
+            if (connexion != null) {&#xD;
+                connexion.rollback();&#xD;
+            }&#xD;
+        } catch (SQLException e2) {&#xD;
+            e2.printStackTrace();&#xD;
+            throw new DaoException(&quot;Impossible de communiquer avec la base de données&quot;);&#xD;
+        }&#xD;
+        e.printStackTrace();&#xD;
+        throw new DaoException(&quot;Impossible de communiquer avec la base de données&quot;);&#xD;
+    }&#xD;
+</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_1TK_ECKeEeiGQvXYHwharg" name="delete" specification="_1TH7wCKeEeiGQvXYHwharg">
+          <language>JAVA</language>
+          <body>&#xD;
+    Connection connexion = null;&#xD;
+    PreparedStatement preparedStatement = null;&#xD;
+    try {&#xD;
+        DaoFactory2.getInstance().getDaoSubtitleLine2().delete(id);&#xD;
+        connexion = DaoFactory2.getConnection();&#xD;
+        preparedStatement = connexion.prepareStatement(&quot;DELETE FROM subtitle WHERE id = ?;&quot;);&#xD;
+        preparedStatement.setInt(1, id);&#xD;
+        preparedStatement.executeUpdate();&#xD;
+        connexion.commit();&#xD;
+    } catch (SQLException e) {&#xD;
+        try {&#xD;
+            if (connexion != null) {&#xD;
+                connexion.rollback();&#xD;
+            }&#xD;
+        } catch (SQLException e2) {&#xD;
+            e2.printStackTrace();&#xD;
+            throw new DaoException(&quot;Impossible de communiquer avec la base de données&quot;);&#xD;
+        }&#xD;
+        e.printStackTrace();&#xD;
+        throw new DaoException(&quot;Impossible de communiquer avec la base de données&quot;);&#xD;
+    }&#xD;
+</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_1TRswCKeEeiGQvXYHwharg" name="list" specification="_1TNbUCKeEeiGQvXYHwharg">
+          <language>JAVA</language>
+          <body>&#xD;
+    Connection conn;&#xD;
+    try {&#xD;
+        conn = DaoFactory2.getConnection();&#xD;
+    } catch (SQLException e1) {&#xD;
+        e1.printStackTrace();&#xD;
+        throw new DaoException(&quot;Impossible de communiquer avec la base de données&quot;);&#xD;
+    }&#xD;
+    List&lt;Subtitles> subtitles = new ArrayList&lt;Subtitles>();&#xD;
+    Statement statement = null;&#xD;
+    ResultSet resultat = null;&#xD;
+    try {&#xD;
+        statement = conn.createStatement();&#xD;
+        resultat = statement.executeQuery(&quot;SELECT * FROM subtitle;&quot;);&#xD;
+        List&lt;Language> languages = DaoFactory2.getInstance().getDaoLanguages().list();&#xD;
+        while (resultat.next()) {&#xD;
+            Subtitles subtitle = new Subtitles();&#xD;
+            subtitle.setId(resultat.getInt(&quot;id&quot;));&#xD;
+            subtitle.setTitle(resultat.getString(&quot;title&quot;));&#xD;
+            subtitle.setIdOriginal(resultat.getInt(&quot;original_id&quot;));&#xD;
+            for (Iterator&lt;Language> iterator = languages.iterator(); iterator.hasNext(); ) {&#xD;
+                Language language = (Language) iterator.next();&#xD;
+                if (language.getAbreviation().equals(resultat.getString(&quot;language_abreviation&quot;))) {&#xD;
+                    subtitle.setLanguage(language);&#xD;
+                }&#xD;
+            }&#xD;
+            List&lt;SubtitleLine> listSubtitleLine = DaoFactory2.getInstance().getDaoSubtitleLine2().list(subtitle.getId());&#xD;
+            subtitle.setsubTitleLines(listSubtitleLine);&#xD;
+            subtitles.add(subtitle);&#xD;
+        }&#xD;
+    } catch (SQLException e) {&#xD;
+        e.printStackTrace();&#xD;
+        throw new DaoException(&quot;Impossible de communiquer avec la base de données&quot;);&#xD;
+    }&#xD;
+    return subtitles;&#xD;
+</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_1TYacCKeEeiGQvXYHwharg" name="update" specification="_1TTh8CKeEeiGQvXYHwharg">
+          <language>JAVA</language>
+          <body>&#xD;
+    Connection connexion = null;&#xD;
+    PreparedStatement preparedStatement = null;&#xD;
+    try {&#xD;
+        connexion = DaoFactory2.getConnection();&#xD;
+        preparedStatement = connexion.prepareStatement(&quot;UPDATE subtitle SET title = ?, language_abreviation = ?, original_id = ? WHERE id = ? ;&quot;);&#xD;
+        preparedStatement.setString(1, subtitles.getTitle());&#xD;
+        preparedStatement.setString(2, subtitles.getLanguage().getAbreviation());&#xD;
+        preparedStatement.setInt(3, subtitles.getIdOriginal());&#xD;
+        preparedStatement.setInt(4, subtitles.getId());&#xD;
+        List&lt;SubtitleLine> listSubtitleLine = subtitles.getsubTitleLines();&#xD;
+        for (SubtitleLine subtitleLine : listSubtitleLine) {&#xD;
+            DaoFactory2.getInstance().getDaoSubtitleLine2().update(subtitles.getId(), subtitleLine);&#xD;
+        }&#xD;
+        preparedStatement.executeUpdate();&#xD;
+        connexion.commit();&#xD;
+    } catch (SQLException e) {&#xD;
+        try {&#xD;
+            if (connexion != null) {&#xD;
+                connexion.rollback();&#xD;
+            }&#xD;
+        } catch (SQLException e2) {&#xD;
+            e2.printStackTrace();&#xD;
+            throw new DaoException(&quot;Impossible de communiquer avec la base de données&quot;);&#xD;
+        }&#xD;
+        e.printStackTrace();&#xD;
+        throw new DaoException(&quot;Impossible de communiquer avec la base de données&quot;);&#xD;
+    }&#xD;
+</body>
+        </ownedBehavior>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_1TB1ICKeEeiGQvXYHwharg" name="add" visibility="public" method="_1TGGkCKeEeiGQvXYHwharg" raisedException="_d8Q1UBuTEeiM_Z9_g55MXg">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_1TERYCKeEeiGQvXYHwharg" name="subtitles" type="_B5FCMB1mEeimfPw4PtkLMw"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_1TH7wCKeEeiGQvXYHwharg" name="delete" visibility="public" method="_1TK_ECKeEeiGQvXYHwharg" raisedException="_d8Q1UBuTEeiM_Z9_g55MXg">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_1TJJ4CKeEeiGQvXYHwharg" name="id">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_1TNbUCKeEeiGQvXYHwharg" name="list" visibility="public" method="_1TRswCKeEeiGQvXYHwharg" raisedException="_d8Q1UBuTEeiM_Z9_g55MXg">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_1TOpcCKeEeiGQvXYHwharg" type="_B5FCMB1mEeimfPw4PtkLMw" direction="return">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1TPQgCKeEeiGQvXYHwharg"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1TP3kCKeEeiGQvXYHwharg" value="*"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_1TTh8CKeEeiGQvXYHwharg" name="update" visibility="public" method="_1TYacCKeEeiGQvXYHwharg" raisedException="_d8Q1UBuTEeiM_Z9_g55MXg">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_1TV-MCKeEeiGQvXYHwharg" name="subtitles" type="_B5FCMB1mEeimfPw4PtkLMw"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_BK3l0CKfEeiGQvXYHwharg" name="DaoSubtitleLine2" visibility="public">
+        <generalization xmi:type="uml:Generalization" xmi:id="_BK4M4CKfEeiGQvXYHwharg" general="_xqb90CKeEeiGQvXYHwharg"/>
+        <generalization xmi:type="uml:Generalization" xmi:id="_C5xXoCKfEeiGQvXYHwharg" general="_d8OZEBuTEeiM_Z9_g55MXg"/>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_BK4z8SKfEeiGQvXYHwharg" name="add" specification="_BK4M4SKfEeiGQvXYHwharg">
+          <language>JAVA</language>
+          <body>&#xD;
+// TODO Auto-generated method stub&#xD;
+</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_BK6pICKfEeiGQvXYHwharg" name="delete" specification="_BK5bACKfEeiGQvXYHwharg">
+          <language>JAVA</language>
+          <body>&#xD;
+    Connection connexion = null;&#xD;
+    PreparedStatement preparedStatement = null;&#xD;
+    try {&#xD;
+        connexion = DaoFactory2.getConnection();&#xD;
+        preparedStatement = connexion.prepareStatement(&quot;DELETE FROM subtitle_line WHERE subtitle_id = ?;&quot;);&#xD;
+        preparedStatement.setInt(1, subtitle_id);&#xD;
+        preparedStatement.executeUpdate();&#xD;
+        connexion.commit();&#xD;
+    } catch (SQLException e) {&#xD;
+        try {&#xD;
+            if (connexion != null) {&#xD;
+                connexion.rollback();&#xD;
+            }&#xD;
+        } catch (SQLException e2) {&#xD;
+            e2.printStackTrace();&#xD;
+            throw new DaoException(&quot;Impossible de communiquer avec la base de données&quot;);&#xD;
+        }&#xD;
+        e.printStackTrace();&#xD;
+        throw new DaoException(&quot;Impossible de communiquer avec la base de données&quot;);&#xD;
+    }&#xD;
+</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_BK73QiKfEeiGQvXYHwharg" name="list" specification="_BK7QMCKfEeiGQvXYHwharg">
+          <language>JAVA</language>
+          <body>&#xD;
+    // TODO Auto-generated method stub&#xD;
+    return null;&#xD;
+</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_BK9FYCKfEeiGQvXYHwharg" name="update" specification="_BK8eUCKfEeiGQvXYHwharg">
+          <language>JAVA</language>
+          <body>&#xD;
+// TODO Auto-generated method stub&#xD;
+</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_BK-6kSKfEeiGQvXYHwharg" name="list" specification="_BK9scCKfEeiGQvXYHwharg">
+          <language>JAVA</language>
+          <body>&#xD;
+    Connection conn;&#xD;
+    try {&#xD;
+        conn = DaoFactory2.getConnection();&#xD;
+    } catch (SQLException e1) {&#xD;
+        e1.printStackTrace();&#xD;
+        throw new DaoException(&quot;Impossible de communiquer avec la base de données&quot;);&#xD;
+    }&#xD;
+    List&lt;SubtitleLine> listSubtitleLine = new ArrayList&lt;SubtitleLine>();&#xD;
+    Statement statement = null;&#xD;
+    ResultSet resultat = null;&#xD;
+    try {&#xD;
+        statement = conn.createStatement();&#xD;
+        resultat = statement.executeQuery(&quot;SELECT * FROM subtitle_line WHERE subtitle_id = &quot; + subtitleId + &quot;;&quot;);&#xD;
+        while (resultat.next()) {&#xD;
+            SubtitleLine sub = new SubtitleLine();&#xD;
+            sub.setId(resultat.getInt(&quot;position&quot;));&#xD;
+            sub.settStart(resultat.getTime(&quot;start&quot;).toLocalTime());&#xD;
+            sub.settEnd(resultat.getTime(&quot;end&quot;).toLocalTime());&#xD;
+            sub.setLine1(resultat.getString(&quot;line1&quot;));&#xD;
+            sub.setLine2(resultat.getString(&quot;line2&quot;));&#xD;
+            listSubtitleLine.add(sub);&#xD;
+        }&#xD;
+    } catch (SQLException e) {&#xD;
+        e.printStackTrace();&#xD;
+        throw new DaoException(&quot;Impossible de communiquer avec la base de données&quot;);&#xD;
+    }&#xD;
+    return listSubtitleLine;&#xD;
+</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_BLAIsSKfEeiGQvXYHwharg" name="add" specification="_BK_hoCKfEeiGQvXYHwharg">
+          <language>JAVA</language>
+          <body>&#xD;
+    // TODO Auto-generated method stub&#xD;
+    Connection connexion = null;&#xD;
+    PreparedStatement preparedStatement = null;&#xD;
+    try {&#xD;
+        connexion = DaoFactory2.getConnection();&#xD;
+        preparedStatement = connexion.prepareStatement(&quot;INSERT INTO subtitle_line (subtitle_id, position, start, end, line1, line2) VALUES( ?, ?, ?, ?, ?, ?);&quot;);&#xD;
+        preparedStatement.setInt(1, subtitleId);&#xD;
+        preparedStatement.setInt(2, subtitleLine.getId());&#xD;
+        preparedStatement.setTime(3, Time.valueOf(subtitleLine.getStart()));&#xD;
+        preparedStatement.setTime(4, Time.valueOf(subtitleLine.getEnd()));&#xD;
+        preparedStatement.setString(5, subtitleLine.getLine1());&#xD;
+        preparedStatement.setString(6, subtitleLine.getLine2());&#xD;
+        preparedStatement.executeUpdate();&#xD;
+        connexion.commit();&#xD;
+    } catch (SQLException e) {&#xD;
+        try {&#xD;
+            if (connexion != null) {&#xD;
+                connexion.rollback();&#xD;
+            }&#xD;
+        } catch (SQLException e2) {&#xD;
+            e2.printStackTrace();&#xD;
+            throw new DaoException(&quot;Impossible de communiquer avec la base de données&quot;);&#xD;
+        }&#xD;
+        e.printStackTrace();&#xD;
+        throw new DaoException(&quot;Impossible de communiquer avec la base de données&quot;);&#xD;
+    }&#xD;
+</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_BLBW0CKfEeiGQvXYHwharg" name="update" specification="_BLAvwCKfEeiGQvXYHwharg">
+          <language>JAVA</language>
+          <body>&#xD;
+    Connection connexion = null;&#xD;
+    PreparedStatement preparedStatement = null;&#xD;
+    try {&#xD;
+        connexion = DaoFactory2.getConnection();&#xD;
+        preparedStatement = connexion.prepareStatement(&quot;UPDATE subtitle_line SET start = ?, end = ?, line1 = ?, line2 = ? WHERE subtitle_id = ? AND position = ? ;&quot;);&#xD;
+        preparedStatement.setTime(1, Time.valueOf(subtitleLine.getStart()));&#xD;
+        preparedStatement.setTime(2, Time.valueOf(subtitleLine.getEnd()));&#xD;
+        preparedStatement.setString(3, subtitleLine.getLine1());&#xD;
+        preparedStatement.setString(4, subtitleLine.getLine2());&#xD;
+        preparedStatement.setInt(5, subtitleId);&#xD;
+        preparedStatement.setInt(6, subtitleLine.getId());&#xD;
+        preparedStatement.executeUpdate();&#xD;
+        connexion.commit();&#xD;
+    } catch (SQLException e) {&#xD;
+        try {&#xD;
+            if (connexion != null) {&#xD;
+                connexion.rollback();&#xD;
+            }&#xD;
+        } catch (SQLException e2) {&#xD;
+            e2.printStackTrace();&#xD;
+            throw new DaoException(&quot;Impossible de communiquer avec la base de données&quot;);&#xD;
+        }&#xD;
+        e.printStackTrace();&#xD;
+        throw new DaoException(&quot;Impossible de communiquer avec la base de données&quot;);&#xD;
+    }&#xD;
+</body>
+        </ownedBehavior>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_BK4M4SKfEeiGQvXYHwharg" name="add" visibility="public" method="_BK4z8SKfEeiGQvXYHwharg" raisedException="_d8Q1UBuTEeiM_Z9_g55MXg">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_BK4z8CKfEeiGQvXYHwharg" name="subtitleLine" type="_g3QKkB1mEeimfPw4PtkLMw"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_BK5bACKfEeiGQvXYHwharg" name="delete" visibility="public" method="_BK6pICKfEeiGQvXYHwharg" raisedException="_d8Q1UBuTEeiM_Z9_g55MXg">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_BK5bASKfEeiGQvXYHwharg" name="subtitle_id">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_BK7QMCKfEeiGQvXYHwharg" name="list" visibility="public" method="_BK73QiKfEeiGQvXYHwharg" raisedException="_d8Q1UBuTEeiM_Z9_g55MXg">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_BK7QMSKfEeiGQvXYHwharg" type="_g3QKkB1mEeimfPw4PtkLMw" direction="return">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_BK73QCKfEeiGQvXYHwharg"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BK73QSKfEeiGQvXYHwharg" value="*"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_BK8eUCKfEeiGQvXYHwharg" name="update" visibility="public" method="_BK9FYCKfEeiGQvXYHwharg" raisedException="_d8Q1UBuTEeiM_Z9_g55MXg">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_BK8eUSKfEeiGQvXYHwharg" name="bean" type="_g3QKkB1mEeimfPw4PtkLMw"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_BK9scCKfEeiGQvXYHwharg" name="list" visibility="public" method="_BK-6kSKfEeiGQvXYHwharg" raisedException="_d8Q1UBuTEeiM_Z9_g55MXg">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_BK-TgCKfEeiGQvXYHwharg" type="_g3QKkB1mEeimfPw4PtkLMw" direction="return">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_BK-TgSKfEeiGQvXYHwharg"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BK-TgiKfEeiGQvXYHwharg" value="*"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_BK-6kCKfEeiGQvXYHwharg" name="subtitleId">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_BK_hoCKfEeiGQvXYHwharg" name="add" visibility="public" method="_BLAIsSKfEeiGQvXYHwharg" raisedException="_d8Q1UBuTEeiM_Z9_g55MXg">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_BK_hoSKfEeiGQvXYHwharg" name="subtitleId">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_BLAIsCKfEeiGQvXYHwharg" name="subtitleLine" type="_g3QKkB1mEeimfPw4PtkLMw"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_BLAvwCKfEeiGQvXYHwharg" name="update" visibility="public" method="_BLBW0CKfEeiGQvXYHwharg" raisedException="_d8Q1UBuTEeiM_Z9_g55MXg">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_BLAvwSKfEeiGQvXYHwharg" name="subtitleId">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_BLAvwiKfEeiGQvXYHwharg" name="subtitleLine" type="_g3QKkB1mEeimfPw4PtkLMw"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_RCMq4CKfEeiGQvXYHwharg" name="AbstractFactory" visibility="public" isAbstract="true">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_RCNR8CKfEeiGQvXYHwharg" name="DAOFACTORY" visibility="public" isLeaf="true" isStatic="true" isUnique="false">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+          <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_RCN5ACKfEeiGQvXYHwharg" name="defaultValue">
+            <language>JAVA</language>
+            <body>1</body>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_RCN5ASKfEeiGQvXYHwharg" name="DAOFACTORY2" visibility="public" isLeaf="true" isStatic="true" isUnique="false">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+          <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_RCN5AiKfEeiGQvXYHwharg" name="defaultValue">
+            <language>JAVA</language>
+            <body>2</body>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_RCPuMSKfEeiGQvXYHwharg" name="getFactory" specification="_RCPHISKfEeiGQvXYHwharg">
+          <language>JAVA</language>
+          <body>&#xD;
+    switch(type) {&#xD;
+        case DAOFACTORY:&#xD;
+            return DaoFactory.getInstance();&#xD;
+        case DAOFACTORY2:&#xD;
+            return DaoFactory2.getInstance();&#xD;
+        default:&#xD;
+            return null;&#xD;
+    }&#xD;
+</body>
+        </ownedBehavior>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_RCOgECKfEeiGQvXYHwharg" name="getDaoSubtitles" visibility="public" isAbstract="true">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_RCOgESKfEeiGQvXYHwharg" type="_xqb90CKeEeiGQvXYHwharg" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_RCOgEiKfEeiGQvXYHwharg" name="getDaoLanguages" visibility="public" isAbstract="true">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_RCPHICKfEeiGQvXYHwharg" type="_xqb90CKeEeiGQvXYHwharg" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_RCPHISKfEeiGQvXYHwharg" name="getFactory" visibility="public" isStatic="true" method="_RCPuMSKfEeiGQvXYHwharg">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_RCPHIiKfEeiGQvXYHwharg" type="_RCMq4CKfEeiGQvXYHwharg" direction="return"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_RCPuMCKfEeiGQvXYHwharg" name="type">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_T3y0cCKeEeiGQvXYHwharg" name="DaoFactory2" visibility="public">
+        <generalization xmi:type="uml:Generalization" xmi:id="_VkqwgCKfEeiGQvXYHwharg" general="_RCMq4CKfEeiGQvXYHwharg"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_T4NEICKeEeiGQvXYHwharg" name="url" visibility="private" isStatic="true" type="_eTc3QBhnEeiAzanQIzaG2w" isUnique="false">
+          <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_T4QugCKeEeiGQvXYHwharg" name="defaultValue">
+            <language>JAVA</language>
+            <body>&quot;jdbc:mysql://localhost:3306/translator2&quot;</body>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_T4W1ICKeEeiGQvXYHwharg" name="user" visibility="private" isStatic="true" type="_eTc3QBhnEeiAzanQIzaG2w" isUnique="false">
+          <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_T4ZRYCKeEeiGQvXYHwharg" name="defaultValue">
+            <language>JAVA</language>
+            <body>&quot;utilisateur&quot;</body>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_T4bGkCKeEeiGQvXYHwharg" name="passwd" visibility="private" isStatic="true" type="_eTc3QBhnEeiAzanQIzaG2w" isUnique="false">
+          <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_T4c7wCKeEeiGQvXYHwharg" name="defaultValue">
+            <language>JAVA</language>
+            <body>&quot;utilisateur&quot;</body>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_T4ew8CKeEeiGQvXYHwharg" name="conn" visibility="private" isStatic="true" type="_zX8vUBrZEeivNpsMtsMdlg" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_T4h0QCKeEeiGQvXYHwharg" name="instance" visibility="private" isStatic="true" type="_T3y0cCKeEeiGQvXYHwharg" isUnique="false">
+          <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_T4kQgCKeEeiGQvXYHwharg" name="defaultValue">
+            <language>JAVA</language>
+            <body>new DaoFactory2()</body>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_T4sMUCKeEeiGQvXYHwharg" name="DaoFactory2" specification="_T4mFsCKeEeiGQvXYHwharg">
+          <language>JAVA</language>
+          <body>&#xD;
+    try {&#xD;
+        Class.forName(&quot;com.mysql.jdbc.Driver&quot;);&#xD;
+    } catch (ClassNotFoundException e) {&#xD;
+    }&#xD;
+    try {&#xD;
+        conn = DriverManager.getConnection(url, user, passwd);&#xD;
+        conn.setAutoCommit(false);&#xD;
+    } catch (SQLException e) {&#xD;
+        e.printStackTrace();&#xD;
+    }&#xD;
+</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_T4xr4CKeEeiGQvXYHwharg" name="getInstance" specification="_T4vPoCKeEeiGQvXYHwharg">
+          <language>JAVA</language>
+          <body>&#xD;
+    if (conn == null)&#xD;
+        instance = new DaoFactory2();&#xD;
+    return instance;&#xD;
+</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_T41WQCKeEeiGQvXYHwharg" name="getConnection" specification="_T4yS8CKeEeiGQvXYHwharg">
+          <language>JAVA</language>
+          <body>&#xD;
+    if (conn == null) {&#xD;
+        conn = DriverManager.getConnection(url, user, passwd);&#xD;
+        conn.setAutoCommit(false);&#xD;
+        Statement statement = conn.createStatement();&#xD;
+        statement.executeQuery(&quot;SET NAMES 'utf8';&quot;);&#xD;
+    }&#xD;
+    return conn;&#xD;
+</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_T5CKkCKeEeiGQvXYHwharg" name="getDaoSubtitles">
+          <language>JAVA</language>
+          <body>&#xD;
+    return new DaoSubtitle2();&#xD;
+</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_T5O-4CKeEeiGQvXYHwharg" name="getDaoSubtitleLine2" specification="_T5FN4CKeEeiGQvXYHwharg">
+          <language>JAVA</language>
+          <body>&#xD;
+    return new DaoSubtitleLine2();&#xD;
+</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_T5ZW8CKeEeiGQvXYHwharg" name="getDaoLanguages">
+          <language>JAVA</language>
+          <body>&#xD;
+    return new DaoLanguage2();&#xD;
+</body>
+        </ownedBehavior>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_T4mFsCKeEeiGQvXYHwharg" name="DaoFactory2" visibility="private" method="_T4sMUCKeEeiGQvXYHwharg"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_T4vPoCKeEeiGQvXYHwharg" name="getInstance" visibility="public" isStatic="true" method="_T4xr4CKeEeiGQvXYHwharg">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_T4wdwCKeEeiGQvXYHwharg" type="_T3y0cCKeEeiGQvXYHwharg" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_T4yS8CKeEeiGQvXYHwharg" name="getConnection" visibility="public" isStatic="true" method="_T41WQCKeEeiGQvXYHwharg" raisedException="_NvBxsBuTEeiM_Z9_g55MXg">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_T4y6ACKeEeiGQvXYHwharg" type="_zX8vUBrZEeivNpsMtsMdlg" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_T5FN4CKeEeiGQvXYHwharg" name="getDaoSubtitleLine2" visibility="public" method="_T5O-4CKeEeiGQvXYHwharg">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_T5NJsCKeEeiGQvXYHwharg" type="_BK3l0CKfEeiGQvXYHwharg" direction="return"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_l0IeMCKeEeiGQvXYHwharg" name="create" client="_T3y0cCKeEeiGQvXYHwharg" supplier="_d8OZEBuTEeiM_Z9_g55MXg"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_oOqYoBhmEeiAzanQIzaG2w" name="file">
       <packagedElement xmi:type="uml:Class" xmi:id="_fCRzgBhkEeiAzanQIzaG2w" name="SRTFile">
@@ -1148,7 +1682,7 @@
         <packagedElement xmi:type="uml:Package" xmi:id="_zX2osBrZEeivNpsMtsMdlg" name="dao">
           <packagedElement xmi:type="uml:Class" xmi:id="_zYm2oBrZEeivNpsMtsMdlg" name="T"/>
           <packagedElement xmi:type="uml:Class" xmi:id="_d8Q1UBuTEeiM_Z9_g55MXg" name="DaoException"/>
-          <packagedElement xmi:type="uml:Class" xmi:id="_nybpMBuTEeiM_Z9_g55MXg" name="Dao"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_xqb90CKeEeiGQvXYHwharg" name="Dao"/>
         </packagedElement>
       </packagedElement>
     </packagedElement>
@@ -1182,7 +1716,6 @@
   <standard:Create xmi:id="_Nuwr8BuTEeiM_Z9_g55MXg" base_BehavioralFeature="_NqLt8BuTEeiM_Z9_g55MXg"/>
   <PapyrusJava:External xmi:id="_NvFcEBuTEeiM_Z9_g55MXg" name="java.sql.SQLException" base_Classifier="_NvBxsBuTEeiM_Z9_g55MXg"/>
   <PapyrusJava:External xmi:id="_d8TRkBuTEeiM_Z9_g55MXg" name="DaoException" base_Classifier="_d8Q1UBuTEeiM_Z9_g55MXg"/>
-  <PapyrusJava:External xmi:id="_nyfTkBuTEeiM_Z9_g55MXg" name="Dao" base_Classifier="_nybpMBuTEeiM_Z9_g55MXg"/>
   <PapyrusJava:External xmi:id="_B8YN0B1mEeimfPw4PtkLMw" name="com.beans.Subtitles" base_Classifier="_B5FCMB1mEeimfPw4PtkLMw"/>
   <standard:Create xmi:id="_B8x2cB1mEeimfPw4PtkLMw" base_BehavioralFeature="_B8s98B1mEeimfPw4PtkLMw"/>
   <PapyrusJava:External xmi:id="_B9Sz0B1mEeimfPw4PtkLMw" name="com.beans.Language" base_Classifier="_B9OiYB1mEeimfPw4PtkLMw"/>
@@ -1192,4 +1725,6 @@
   <standard:Create xmi:id="_dTCc8B1mEeimfPw4PtkLMw" base_BehavioralFeature="_dTAnwB1mEeimfPw4PtkLMw"/>
   <standard:Create xmi:id="_g3HnsB1mEeimfPw4PtkLMw" base_BehavioralFeature="_g3FLcB1mEeimfPw4PtkLMw"/>
   <PapyrusJava:External xmi:id="_g3Sm0B1mEeimfPw4PtkLMw" name="com.beans.SubtitleLine" base_Classifier="_g3QKkB1mEeimfPw4PtkLMw"/>
+  <standard:Create xmi:id="_T4pJACKeEeiGQvXYHwharg" base_BehavioralFeature="_T4mFsCKeEeiGQvXYHwharg"/>
+  <PapyrusJava:External xmi:id="_xqeaECKeEeiGQvXYHwharg" name="Dao" base_Classifier="_xqb90CKeEeiGQvXYHwharg"/>
 </xmi:XMI>

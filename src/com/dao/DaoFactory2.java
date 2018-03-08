@@ -7,15 +7,15 @@ import java.sql.Statement;
 
 /**
  * 
- * Factory des élément dao 
+ * Factory des élément dao pour la base de données Mysql translator2
  * @author oltenos
  *
  */
-public class DaoFactory extends AbstractFactory{
+public class DaoFactory2 extends AbstractFactory{
 	/**
 	 * URL de connexion
 	 */
-	private static String url = "jdbc:mysql://localhost:3306/translator";
+	private static String url = "jdbc:mysql://localhost:3306/translator2";
 	/**
 	 * Nom du user
 	 */
@@ -31,12 +31,12 @@ public class DaoFactory extends AbstractFactory{
 	/**
 	 * Instance
 	 */
-	private static DaoFactory instance = new DaoFactory();
+	private static DaoFactory2 instance = new DaoFactory2();
 
 	/**
 	 * Constructeur privé
 	 */
-	private DaoFactory() {
+	private DaoFactory2() {
 		try {
             Class.forName("com.mysql.jdbc.Driver");
         } catch (ClassNotFoundException e) {
@@ -53,9 +53,9 @@ public class DaoFactory extends AbstractFactory{
 	 * 
 	 * @return l'instance de DaoFactory
 	 */
-	public static DaoFactory getInstance() {
+	public static DaoFactory2 getInstance() {
 		if (conn == null)
-			instance = new DaoFactory();
+			instance = new DaoFactory2();
 
 		return instance;
 	}
@@ -66,31 +66,39 @@ public class DaoFactory extends AbstractFactory{
 	 * @throws SQLException
 	 */
 	public static Connection getConnection() throws SQLException {
-		if (conn == null) {
-			conn = DriverManager.getConnection(url, user, passwd);
+		if(conn == null) {
+					conn = DriverManager.getConnection(url, user, passwd);
 			conn.setAutoCommit(false);
 			Statement statement = conn.createStatement();
 			statement.executeQuery("SET NAMES 'utf8';");
 		}
-		return conn;
-	}
+        return conn; 
+    }
 
 	/**
-	 * Permet d'obtenir un objet DaoSubtitles
-	 * @return un nouvel objet DaoSubtitles
+	 * Permet d'obtenir un objet DaoSubtitle2
+	 * @return un nouvel objet DaoSubtitle2
 	 */
 	@Override
-	public DaoSubtitles getDaoSubtitles() {
-		return new DaoSubtitles();
+	public DaoSubtitle2 getDaoSubtitles() {
+		return new DaoSubtitle2();
 	}
 	
 	/**
-	 * Permet d'obtenir un objet DaoLanguages
-	 * @return un nouvel objet DaoLanguages
+	 * Permet d'obtenir un objet DaoSubtitleLine2
+	 * @return un nouvel objet DaoSubtitleLine2
+	 */
+	public DaoSubtitleLine2 getDaoSubtitleLine2() {
+		return new DaoSubtitleLine2();
+	}
+	
+	/**
+	 * Permet d'obtenir un objet DaoLanguage2
+	 * @return un nouvel objet DaoLanguage2
 	 */
 	@Override
-	public DaoLanguages getDaoLanguages() {
-		return new DaoLanguages();
+	public DaoLanguage2 getDaoLanguages() {
+		return new DaoLanguage2();
 	}
 
 };

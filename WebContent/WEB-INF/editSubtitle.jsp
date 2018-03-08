@@ -26,6 +26,13 @@
 					<p class = "error col-sm-offset-4 col-sm-4"><span class="glyphicon glyphicon-warning-sign"></span> ${ error }</p>
 				</c:if>
 			</div>
+			<div class="row">
+				<c:if test="${ !empty fin }">
+					<c:if test="${ empty error }">
+						<p class = "col-sm-offset-4 col-sm-4"> ${ fin }</p>
+					</c:if>
+				</c:if>
+			</div>
 		</div>
 
 		<p><a href="/SubTranslate/index" class="btn btn-primary margin"><span class="glyphicon glyphicon-arrow-left"></span> Retour accueil</a></p>

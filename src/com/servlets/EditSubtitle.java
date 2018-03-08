@@ -98,6 +98,7 @@ public class EditSubtitle extends HttpServlet {
 		subtitlesDest.setsubTitleLines(subTitleLines);
 		model.setSubtitlesDestination(subtitlesDest);
 		
+		request.setAttribute("fin", "Les modifications ont été enregistrées");
 		
 		Subtitles subtitlesOr = model.getSubtitlesOriginal();
 		List<SubtitleLine> subTitleLinesOr = subtitlesOr.getsubTitleLines();
